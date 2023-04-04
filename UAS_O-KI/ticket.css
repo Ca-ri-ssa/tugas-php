@@ -1,0 +1,43 @@
+.img{
+    background-image: url(img/Frame9.png);
+}
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+body{
+    overflow-x: hidden;
+}
+.navcolor{
+    background-color: white;
+    border-bottom: 2px solid #7C924E;
+}
+.btncolor{
+    background-color: #7C924E;
+    color: white;
+}
+.btncolor:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid #7C924E;
+}
+
+.carousel {
+    margin-bottom: 4rem;
+}
+  
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+    
+.carousel-item {
+    height: 500px;
+}
+
+/* navbar logout */
+.pointer{
+    cursor: pointer;
+}

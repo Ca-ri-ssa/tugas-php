@@ -1,0 +1,89 @@
+.img{
+    background-image: url(img/Frame9.png);
+}
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+body{
+    overflow-x: hidden;
+}
+.navcolor{
+    background-color: white;
+    border-bottom: 2px solid #7C924E;
+}
+.btncolor{
+    background-color: #7C924E;
+    color: white;
+}
+.btncolor:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid #7C924E;
+}
+
+.carousel {
+    margin-bottom: 4rem;
+}
+  
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+    
+.carousel-item {
+    height: 500px;
+}
+
+/* navbar logout */
+.pointer{
+    cursor: pointer;
+}
+
+.bd-placeholder-img-1{
+    background-image: url(img/blackpink\ lightstick.jpg) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    position: relative;
+    height: 400px;
+  }
+
+  .bd-placeholder-img-2{
+    background-image: url(img/bts-idols.png) !important;
+    background-repeat: no-repeat !important;              
+    background-size: cover;
+    position: relative;
+    height: 400px;
+  }
+    
+  .bd-placeholder-img-3{
+    background-image: url(img/nct-idols.png) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    position: relative;
+    height: 400px;
+  }
+
+  .carousel-inner h1{
+    color: #7C924E !important;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    font-size: 38px !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+  .carousel-inner p{
+    color: white !important;
+    font-family:Verdana, Geneva, Tahoma, sans-serif !important;
+    font-size: 20px !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+  .carousel-caption{
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+  }
