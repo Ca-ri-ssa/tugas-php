@@ -138,13 +138,13 @@
                           </div>
                         </div>
 
-                        <div class="col-12">
+                        <!-- <div class="col-12">
                           <label for="profile_image" class="form-label">Profile Picture</label>
                           <input type="file" class="form-control" id="profile_image" name="profile_image" placeholder="" value="<?php echo $row['profile_image'] ?>" required="" fdprocessedid="khla5h">
                           <div class="invalid-feedback">
                             Valid fandom is required.
                           </div>
-                        </div>
+                        </div> -->
                     </form>
                   <hr style="margin-top: 30px;">
                   <button class="w-100 btn btn-success btn-lg" type="submit" fdprocessedid="imw7n">Save</button>
