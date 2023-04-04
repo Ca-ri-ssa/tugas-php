@@ -89,7 +89,7 @@
                   // Memasukkan data yang diambil ke dalam variable
                   $row = mysqli_fetch_assoc($result);
                   ?>
-                  <h2 style="margin-top: 50px;">Welcome 🤗,<h2>
+                  <img src="<?php echo $row['profile_image']?>" class="img-thumbnail" alt="...">
                   <div class="data" style="margin-top: 30px; margin-bottom: 50px;">
                     <h4 value="" name=""><?php echo $row['username']?></h4>
                     <p class="text-secondary mb-1" style="font-size: 16px;"><?php echo $row['fandom']?></p>

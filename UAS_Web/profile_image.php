@@ -1,28 +1,37 @@
 <?php
-error_reporting(0);
- 
-$msg = "";
- 
-// If upload button is clicked ...
-if (isset($_POST['upload'])) {
- 
-    $filename = $_FILES["uploadfile"]["name"];
-    $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "./image/" . $filename;
- 
-    $db = mysqli_connect("localhost", "root", "", "geeksforgeeks");
- 
-    // Get all the submitted data from the form
-    $sql = "INSERT INTO image (filename) VALUES ('$filename')";
- 
-    // Execute query
-    mysqli_query($db, $sql);
- 
-    // Now let's move the uploaded image into the folder: image
-    if (move_uploaded_file($tempname, $folder)) {
-        echo "<h3>  Image uploaded successfully!</h3>";
-    } else {
-        echo "<h3>  Failed to upload image!</h3>";
+// Include the database configuration file
+include 'config.php';
+$statusMsg = '';
+
+// File upload path
+$targetDir = "profileimg/";
+$fileName = basename($_FILES["file"]["name"]);
+$targetFilePath = $targetDir . $fileName;
+$fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+
+if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
+    // Allow certain file formats
+    $allowTypes = array('jpg','png','jpeg','gif','pdf');
+    if(in_array($fileType, $allowTypes)){
+        // Upload file to server
+        if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
+            // Insert image file name into database
+            $insert = $db->query("INSERT into images (file_name, uploaded_on) VALUES ('".$fileName."', NOW())");
+            if($insert){
+                $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
+            }else{
+                $statusMsg = "File upload failed, please try again.";
+            } 
+        }else{
+            $statusMsg = "Sorry, there was an error uploading your file.";
+        }
+    }else{
+        $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
     }
+}else{
+    $statusMsg = 'Please select a file to upload.';
 }
+
+// Display status message
+echo $statusMsg;
 ?>
