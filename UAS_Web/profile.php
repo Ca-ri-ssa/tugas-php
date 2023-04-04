@@ -90,8 +90,8 @@
                   $row = mysqli_fetch_assoc($result);
                   ?>
                   <div class="data" style="margin-top: 30px; margin-bottom: 50px;">
-                    <!-- <img src="..." class="img-thumbnail" alt="..."> -->
-                    <h4 value="" name="">Welcome, <?php echo $row['username']?></h4>
+                    <img src="img/placeholder.png" class="img-thumbnail" width="200" height="200" alt="...">
+                    <h4 style="margin-top: 20px;">Welcome, <p style="color: #198754"><?php echo $row['username']?></p></h4>
                     <p class="text-secondary mb-1" style="font-size: 16px;"><?php echo $row['fandom']?></p>
                     <p class="text-muted font-size-sm" style="font-size: 16px;"><?php echo $row['address']?></p>
                     <div style="margin-top: 30px;">

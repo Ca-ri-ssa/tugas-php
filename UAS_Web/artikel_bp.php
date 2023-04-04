@@ -69,6 +69,7 @@
   <div class="container-fluid" style="margin: 80px 0 20px 0; padding: 0 100px; border-bottom: 2px solid #7C924E">
     <h2 style="text-align: center;">Blackpink Concert in Indonesia</h2>
     <div style="text-align: right; margin-bottom: 30px;">
+      <a style="font-size: 16px; display: inline; margin-right: 20px;" href="">Edit</a>
       <p style="font-size: 12px; display: inline; margin-right: 20px;">Written by: O-KI</p>
       <p style="font-size: 12px; display: inline;">01 March 2023</p>
     </div>
@@ -77,11 +78,15 @@
     <p style="font-size: medium; padding: 0 15px; text-align: justify;">
         Blackpink's concert in Gelora Bung Karno, Jakarta. People are excited about this upcoming concert that will be held on 11-12 March 2023. For you, that haven't got the ticket, let's go get it as they will only come once or twice in a year. Check out the venue on this picture down below:
     </p>
+    <!-- edit space -->
+    <p></p>
       <img src="img/blackpink venue.png" style="display:block; margin-left:auto; margin-right:auto; float:middle; width: 650px;">
       <br>
       <p style="font-size: medium; padding: 0 15px; text-align: justify;">
           If you still curious whether you want to buy the ticket or not, you could just try to watch this video that will help answer your question regarding this week blackpink's concert:
       </p>
+      <!-- edit space -->
+      <p></p>
       <iframe width="650" height="350" src="https://www.youtube.com/embed/Qxs_DCLswYA?" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="display:block; margin-left:auto; margin-right:auto; float:middle;" allowfullscreen></iframe>
       <br>
       <p style="font-size: medium; padding: 0 15px; text-align: justify; margin-bottom: 70px;">
