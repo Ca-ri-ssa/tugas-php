@@ -74,36 +74,17 @@
     <div class="main-body">
       <h1 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 55px;">Profile</h1>
         <div class="row">
-          <div class="col-5">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex flex-column align-items-center text-center">
-                  <!-- Icons -->
-                  <!-- dengan php untuk mengambil data dari database user-->
-                  <?php
-                  $username = $_SESSION['username'];
+        <?php
+          $username = $_SESSION['username'];
 
-                  $query = "SELECT * FROM user WHERE username ='$username'";
-                  $result = mysqli_query($conn, $query);
+          $query = "SELECT * FROM user WHERE username ='$username'";
+          $result = mysqli_query($conn, $query);
 
-                  // Memasukkan data yang diambil ke dalam variable
-                  $row = mysqli_fetch_assoc($result);
-                  ?>
-                  <div class="data" style="margin-top: 30px; margin-bottom: 50px;">
-                    <img src="img/placeholder.png" class="img-thumbnail" width="200" height="200" alt="...">
-                    <h4 style="margin-top: 20px;">Welcome, <p style="color: #198754"><?php echo $row['username']?></p></h4>
-                    <p class="text-secondary mb-1" style="font-size: 16px;"><?php echo $row['fandom']?></p>
-                    <p class="text-muted font-size-sm" style="font-size: 16px;"><?php echo $row['address']?></p>
-                    <div style="margin-top: 30px;">
-                      <button class="btn btn-outline-success" onclick="location.href='profile_edit.php';" style="margin-right: 10px;" >Edit</button>
-                      <!-- <button class="btn btn-success">Save</button> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          // Memasukkan data yang diambil ke dalam variable
+          $row = mysqli_fetch_assoc($result);
+          ?>
+          
+          <h4 style="margin-left: 30px;">Welcome, <p style="color: #198754; display: inline;"><?php echo $row['username']?></p></h4>
           <div class="col" style="margin-left: 30px;">
             <div class="card-body">
             <hr>

@@ -18,7 +18,7 @@
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="border-bottom: 2px solid #7C924E; background-color: white;">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="border-bottom: 2px solid #7C924E; background-color: white;">
       <div class="container-fluid">
         <a href="#"><img src="img/LOGO.png" style="width: 100px;"></a>
         <button class="navbar-toggler btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #7C924E">
@@ -66,10 +66,11 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> -->
 
+    <!-- ingat edit -->
     <div class="container" style="margin-top: 80px;">
-        <h3 class="pb-2 border-bottom" style="margin-bottom: 50px;">Tambah Berita</h3>
+        <h3 class="pb-2 border-bottom" style="margin-bottom: 50px;">Edit Berita</h3>
         <form action="add_news_process.php" method="post" enctype="multipart/form-data">
             <div style="padding: 0 50px;">
                 <div class="col-12">
