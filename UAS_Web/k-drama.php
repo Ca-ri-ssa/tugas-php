@@ -114,7 +114,7 @@
                     </div>
                   <div class="col p-5 d-flex flex-column position-static">
                     <h3 class="mb-0">'Taxi Driver 2' Ratings Soar To New All-Time High</h3>
-                    <div class="mb-1 text-muted">APR 02</div>
+                    <div class="mb-1 text-muted">Apr 02 2023</div>
                     <p class="card-text mb-auto">On April 1, SBS's 'Taxi Driver 2' reached a new all-time high in viewership. According to Nielsen Korea, the hit drama earned an average nationwide rating of 18.3 percent</p>
                     <a href="" class="stretched-link">Continue reading...</a>
                   </div>
@@ -127,7 +127,7 @@
                     </div>
                   <div class="col p-5 d-flex flex-column position-static">
                     <h3 class="mb-0">'Dream' Starring Park Seo Joon and IU Confirmed to Air at April 26, 2023</h3>
-                    <div class="mb-1 text-muted">APR 01</div>
+                    <div class="mb-1 text-muted">Apr 01 2023</div>
                     <p class="card-text mb-auto">On Sunday, March 12, 2023, three cinema companies in South Korea announced that 'Dream', starring Park Seo Joon and IU, was confirmed to be broadcast on April 26, 2023</p>
                     <a href="" class="stretched-link">Continue reading...</a>
                   </div>
@@ -140,7 +140,7 @@
                     </div>
                   <div class="col p-5 d-flex flex-column position-static">
                     <h3 class="mb-0">8 Highly-Anticipated K-Dramas Releasing In April 2023</h3>
-                    <div class="mb-1 text-muted">MAR 27</div>
+                    <div class="mb-1 text-muted">Mar 27 2023</div>
                     <p class="card-text mb-auto">From new releases to new seasons, there's plenty to check out.</p>
                     <a href="" class="stretched-link">Continue reading...</a>
                   </div>
@@ -153,7 +153,7 @@
                     </div>
                   <div class="col p-5 d-flex flex-column position-static">
                     <h3 class="mb-0">ASTRO's Cha Eunwoo Is So Charming Even An 'Island' Staff Member Was Ready To Risk It All</h3>
-                    <div class="mb-1 text-muted">MAR 23</div>
+                    <div class="mb-1 text-muted">Mar 23 2023</div>
                     <p class="card-text mb-auto">Although the idol is renowned for his insane visuals, he continually gains the respect of everyone for his talents and true personality</p>
                     <a href="" class="stretched-link">Continue reading...</a>
                   </div>
@@ -166,7 +166,7 @@
                     </div>
                   <div class="col p-5 d-flex flex-column position-static">
                     <h3 class="mb-0">'Extraordinary Attorney Woo' Confirms Production Of Season 2</h3>
-                    <div class="mb-1 text-muted">MAR 12</div>
+                    <div class="mb-1 text-muted">Mar 12 2023</div>
                     <p class="card-text mb-auto">According to an exclusive report from Edaily, Lee Sang Baek, CEO of Acetory which is the production company for the K-Drama, has confirmed with the media outlet that there will be a second season of Extraordinary Lawyer Woo Young Woo</p>
                     <a href="" class="stretched-link">Continue reading...</a>
                   </div>

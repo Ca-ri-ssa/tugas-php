@@ -142,12 +142,11 @@
               </div>
             </div>
             <hr>
-            <!-- <div class="row d-flex">
+            <div class="row d-flex">
               <div class="d-flex flex-row-reverse" style="margin-top: 30px;">
-                <button class="btn btn-success">Save</button>
-                <button class="btn btn-outline-success" style="margin-right: 15px;">Edit</button>
+                <button class="btn btn-outline-success" style="margin-right: 15px;" onclick="location.href= 'profile_edit.php';">Edit</button>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>

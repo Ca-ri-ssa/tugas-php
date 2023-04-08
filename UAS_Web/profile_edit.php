@@ -116,7 +116,7 @@
             
                         <div class="col-12">
                           <label for="email" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" fvalue="<?php echo $row['email'] ?>" dprocessedid="l7js95">
+                          <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" value="<?php echo $row['email'] ?>" dprocessedid="l7js95">
                           <div class="invalid-feedback">
                             Please enter a valid email address.
                           </div>

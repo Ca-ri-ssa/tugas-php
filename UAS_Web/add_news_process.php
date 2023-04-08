@@ -3,8 +3,9 @@
 include ("config.php");
 
 $title = $_POST['title'];
+$desc_news = $_POST['desc_news'];
 $content = $_POST['content'];
-$date_news = date("l jS \of F Y");
+$date_news = date("M d Y");
 $news_image = $_FILES['news_image']['name'];
 
 if (isset($_POST['add'])) {
@@ -17,7 +18,7 @@ if (isset($_POST['add'])) {
     if(in_array($ext, $ext_allow) === true){
 		if($size < 1044070){
 			move_uploaded_file($file_tmp, './img_news/'.$imgnews);
-            $sql = mysqli_query($conn, "INSERT INTO news (title,content,date_news, news_image) VALUES ('$title', '$content', now(), '$imgnews')");
+            $sql = mysqli_query($conn, "INSERT INTO news (title, desc_news, content, date_news, news_image) VALUES ('$title', '$desc_news', '$content', now(), '$imgnews')");
 					// $query = mysql_query("INSERT INTO upload VALUES(NULL, '$nama')");
 					if($sql){
 						// echo 'FILE BERHASIL DI UPLOAD';

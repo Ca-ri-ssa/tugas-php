@@ -69,12 +69,16 @@
     </nav>
 
     <div class="container" style="margin-top: 80px;">
-        <h3 class="pb-2 border-bottom" style="margin-bottom: 50px;">Tambah Berita</h3>
+        <h2 class="pb-2 border-bottom" style="margin-bottom: 50px; font-weight: bold;">Add News</h2>
         <form action="add_news_process.php" method="post" enctype="multipart/form-data">
-            <div style="padding: 0 50px;">
+            <div style="padding: 0 30px;">
                 <div class="col-12">
                     <label for="title" class="form-label">Title</label>
                     <input type="text" class="form-control" id="title" name="title" placeholder="" fvalue="" dprocessedid="l7js95">
+                </div>
+                <div class="col-12" style="margin-top: 30px;">
+                    <label for="desc_news" class="form-label">Description</label>
+                    <textarea class="form-control" id="desc_news" name="desc_news" placeholder="" fvalue="" dprocessedid="l7js95"></textarea>
                 </div>
                 <div class="col-12" style="margin-top: 30px;">
                     <label for="content" class="form-label">Content</label>
@@ -84,7 +88,7 @@
                     <label for="news_image" class="form-label">News Image</label>
                     <input type="file" class="form-control" id="news_image" name="news_image" placeholder="" fvalue="" dprocessedid="l7js95">
                 </div>
-                <input class="btn btn-success" style="float: right; margin-top: 50px;" name="add" type="submit" value="Save">
+                <input class="btn btn-success" style="float: right; margin: 50px 0;" name="add" type="submit" value="Save">
             </div>
         </form>
     </div>

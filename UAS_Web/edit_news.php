@@ -1,4 +1,4 @@
-<?php include('config.php') ?>
+<?php include('config.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@
 </head>
 <body>
 <!-- Navbar -->
-<!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="border-bottom: 2px solid #7C924E; background-color: white;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="border-bottom: 2px solid #7C924E; background-color: white;">
       <div class="container-fluid">
         <a href="#"><img src="img/LOGO.png" style="width: 100px;"></a>
         <button class="navbar-toggler btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #7C924E">
@@ -66,26 +66,36 @@
           </ul>
         </div>
       </div>
-    </nav> -->
+    </nav>
 
     <!-- ingat edit -->
+    <?php
+    $query="SELECT * FROM news WHERE id_news = '$_GET[id_news]'";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    ?>
+
     <div class="container" style="margin-top: 80px;">
-        <h3 class="pb-2 border-bottom" style="margin-bottom: 50px;">Edit Berita</h3>
-        <form action="add_news_process.php" method="post" enctype="multipart/form-data">
+        <h3 class="pb-2 border-bottom" style="margin-bottom: 50px;">Edit News</h3>
+        <form action="edit_news_process.php" method="post" enctype="multipart/form-data">
             <div style="padding: 0 50px;">
                 <div class="col-12">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="" fvalue="" dprocessedid="l7js95">
+                    <input type="text" class="form-control" id="title" name="title" placeholder="" value="<?php echo $row['title'] ?>" dprocessedid="l7js95">
+                </div>
+                <div class="col-12" style="margin-top: 30px;">
+                    <label for="desc_news" class="form-label">Description</label>
+                    <textarea class="form-control" id="desc_news" name="desc_news" placeholder="" value="<?php echo $row['desc_news'] ?>" dprocessedid="l7js95"></textarea>
                 </div>
                 <div class="col-12" style="margin-top: 30px;">
                     <label for="content" class="form-label">Content</label>
-                    <textarea class="form-control" id="content" name="content" placeholder="" fvalue="" dprocessedid="l7js95"></textarea>
+                    <textarea class="form-control" id="content" name="content" placeholder="" value="<?php echo $row['content'] ?>" dprocessedid="l7js95"></textarea>
                 </div>
                 <div class="col-12" style="margin-top: 30px;">
                     <label for="news_image" class="form-label">News Image</label>
-                    <input type="file" class="form-control" id="news_image" name="news_image" placeholder="" fvalue="" dprocessedid="l7js95">
+                    <input type="file" class="form-control" id="news_image" name="news_image" placeholder="" value="<?php echo $row['news_image'] ?>" dprocessedid="l7js95">
                 </div>
-                <input class="btn btn-success" style="float: right; margin-top: 50px;" name="add" type="submit" value="Save">
+                <input class="btn btn-success" style="float: right; margin: 50px 0;" name="add" type="submit" value="Save">
             </div>
         </form>
     </div>

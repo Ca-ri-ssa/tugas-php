@@ -106,7 +106,10 @@
         </div> -->
 
         <div class="container">
-            <h2 class="pb-2 border-bottom" style="font-weight: bold; margin-top: 50px; margin-bottom: 55px;">Debuts / Comebacks</h2>
+          <div class="pb-2 border-bottom">
+            <h2 style="font-weight: bold; margin-top: 50px; margin-bottom: 55px; display: inline;">Debuts / Comebacks</h2>
+            <a href="add_news.php" style="display: inline; float: right;">ADD</a>
+          </div>
             <div class="col-12 fontart" style="margin-top: 15px;">
                 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                   <div class="col-auto d-none d-lg-block">
@@ -115,7 +118,7 @@
                   <div class="col p-5 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-success" style="font-size: 16px;">Comeback</strong>
                     <h3 class="mb-0">Apink comeback with 'SELF' Mini-Album</h3>
-                    <div class="mb-1 text-muted">APR 01</div>
+                    <div class="mb-1 text-muted">APR 01 2023</div>
                     <p class="card-text mb-auto">Apink will be making a comeback with its 10th mini-album "SELF" on April 5 with the title song "DND (Do not Disturb)."</p>
                     <a href="" class="stretched-link">Continue reading...</a>
                   </div>
@@ -129,7 +132,7 @@
                   <div class="col p-5 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-success" style="font-size: 16px;">Comeback</strong>
                     <h3 class="mb-0">Dream Note releases concept photos for their upcoming song 'Blue'</h3>
-                    <div class="mb-1 text-muted">MAR 27</div>
+                    <div class="mb-1 text-muted">MAR 27 2023</div>
                     <p class="card-text mb-auto">The group Dream Note has released concept photos for the pre-release song "BLUE" from their upcoming 5th single 'Secondary Page'</p>
                     <a href="" class="stretched-link">Continue reading...</a>
                   </div>
@@ -143,7 +146,7 @@
                   <div class="col p-5 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-danger" style="font-size: 16px;">Debut</strong>
                     <h3 class="mb-0">NCT's new unit "DoJaeJung"</h3>
-                    <div class="mb-1 text-muted">MAR 25</div>
+                    <div class="mb-1 text-muted">MAR 25 2023</div>
                     <p class="card-text mb-auto">DoJaeJung of NCT will officially debut on April 17th. It was reported they filmed their debut MV in Thailand</p>
                     <a href="artikel_bp.php" class="stretched-link">Continue reading...</a>
                   </div>
@@ -157,7 +160,7 @@
                   <div class="col p-5 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-success" style="font-size: 16px;">Comeback</strong>
                     <h3 class="mb-0">BOL4 reveals beautiful concept photos for 'Love.zip'</h3>
-                    <div class="mb-1 text-muted">MAR 20</div>
+                    <div class="mb-1 text-muted">MAR 20 2023</div>
                     <p class="card-text mb-auto">The singer's 4th mini album 'Love.zip' is set to drop on April 16 KST</p>
                     <a href="" class="stretched-link">Continue reading...</a>
                   </div>
@@ -171,7 +174,7 @@
                   <div class="col p-5 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-danger" style="font-size: 16px;">Debut</strong>
                     <h3 class="mb-0">Modhaus releases coming soon teasers of ARTMS</h3>
-                    <div class="mb-1 text-muted">MAR 18</div>
+                    <div class="mb-1 text-muted">MAR 18 2023</div>
                     <p class="card-text mb-auto">About two weeks ago, LOONA's Heejin, Kim Lip, Jinsoul, and Choerry signed exclusive contracts with Modhaus</p>
                     <a href="" class="stretched-link">Continue reading...</a>
                   </div>

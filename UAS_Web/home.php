@@ -1,3 +1,5 @@
+<?php require('config.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,32 +84,8 @@
         <div class="container px-4 py-5" id="custom-cards">
           <div class="pb-2 border-bottom">
             <h2 class="pb-2" style="font-weight: bold; display: inline;">Today's News</h2>
-            <a href="add_news.php" style="display: inline; float: right;">ADD</a>
             </div>
           <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-            <!-- tambah news db php -->
-            <div class="col">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img_news/<?php echo['img_news']?>');">
-                  <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-                      <a href="article_read.php" style="text-decoration: none; color: white">
-                        <?php echo ['title']; ?>
-                      </a>
-                    </h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                      <li class="me-auto">
-                        <img src="img/logo-bg.png" alt="O-KI" width="32" height="32" class="rounded-circle border border-white">
-                      </li>
-                      <li class="d-flex align-items-center">
-                        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                        <small><?php echo ['tanggal']; ?></small>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-            </div>
-            <!-- end tambah news db php -->
-
             <div class="col">
               <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/kard-home.png');">
                 <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
@@ -191,7 +169,7 @@
               <div class="col p-5 d-flex flex-column position-static">
                   <strong class="d-inline-block mb-2 text-success" style="font-size: 20px;">#2</strong>
                   <h3 class="mb-0">Jimin released new solo album</h3>
-                  <div class="mb-1 text-muted">MAR 24</div>
+                  <div class="mb-1 text-muted">Mar 24 2023</div>
                   <p class="card-text mb-auto">Fans were shocked with the news about Jimin solo debut.</p>
                   <a href="#" class="stretched-link">Continue reading</a>
               </div>
@@ -205,7 +183,7 @@
               <div class="col p-5 d-flex flex-column position-static">
                   <strong class="d-inline-block mb-2 text-success" style="font-size: 20px;">#3</strong>
                   <h3 class="mb-0">Kai's Rover is banned during CSAT</h3>
-                  <div class="mb-1 text-muted">MAR 20</div>
+                  <div class="mb-1 text-muted">Mar 20 2023</div>
                   <p class="card-text mb-auto">Kai's Rover has been stuck in many netizens' minds rent-free thanks to its fun melody and addictive chorus.</p>
                   <a href="#" class="stretched-link">Continue reading</a>
               </div>
@@ -225,7 +203,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-danger">HOT</strong>
                         <h3 class="mb-0">Blackpink Comeback</h3>
-                        <div class="mb-1 text-muted">Aug 20</div>
+                        <div class="mb-1 text-muted">Aug 20 2023</div>
                         <p class="card-text mb-auto">Blackpink will release new album "Born Pink" at 16th September 2022</p>
                         <a href="#" class="stretched-link">Continue reading...</a>
                     </div>
@@ -239,7 +217,7 @@
                       <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-success">New</strong>
                         <h3 class="mb-0">Nct Dream Comeback</h3>
-                        <div class="mb-1 text-muted">Dec 20</div>
+                        <div class="mb-1 text-muted">Dec 20 2023</div>
                         <p class="card-text mb-auto">Nct Dream remake Candy from H.O.T! It will be released at 16th December 2022</p>
                         <a href="#" class="stretched-link">Continue reading...</a>
                       </div>
@@ -258,7 +236,7 @@
                         <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-danger">HOT</strong>
                         <h3 class="mb-0">First AI K-POP “Dating Scandal”</h3>
-                        <div class="mb-1 text-muted">MAR 21</div>
+                        <div class="mb-1 text-muted">Mar 21 2023</div>
                         <p class="card-text mb-auto">SUPERKIND's Seung Responds “To The Scandal Rumors” About MAVE:'s ZENA</p>
                         <a href="#" class="stretched-link">Continue reading...</a>
                         </div>
@@ -272,7 +250,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-success">New</strong>
                         <h3 class="mb-0">Actor Yoo Ah In Tests Positive For Cocaine And Ketamine</h3>
-                        <div class="mb-1 text-muted">MAR 28</div>
+                        <div class="mb-1 text-muted">Mar 28 2023</div>
                         <p class="card-text mb-auto">He has tested positive for four different drugs</p>
                         <a href="#" class="stretched-link">Continue reading...</a>
                     </div>
@@ -292,7 +270,7 @@
                         <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-danger">HOT</strong>
                         <h3 class="mb-0">'Divorce Attorney Shin', The Meaning of Marriage</h3>
-                        <div class="mb-1 text-muted">FEB 3</div>
+                        <div class="mb-1 text-muted">Feb 3 2023</div>
                         <p class="card-text mb-auto">This drama will be released on 4th March</p>
                         <a href="#" class="stretched-link">Continue reading...</a>
                         </div>
@@ -306,7 +284,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-success">New</strong>
                         <h3 class="mb-0">'The Good Bad Mother' has released a new poster</h3>
-                        <div class="mb-1 text-muted">APR 01</div>
+                        <div class="mb-1 text-muted">Apr 01 2023</div>
                         <p class="card-text mb-auto">Lee Do Hyun, Ahn Eun Jin, And Ra Mi Ran Reunite In Their Hometown In New Drama</p>
                         <a href="#" class="stretched-link">Continue reading...</a>
                     </div>

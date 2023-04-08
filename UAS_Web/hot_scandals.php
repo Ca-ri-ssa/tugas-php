@@ -114,7 +114,7 @@
                       </div>
                   <div class="col p-5 d-flex flex-column position-static">
                       <h3 class="mb-0">Dispatch Reveals “The Glory” Stars Lim Ji Yeon And Lee Do Hyun Are Dating</h3>
-                      <div class="mb-1 text-muted">APR 01</div>
+                      <div class="mb-1 text-muted">Apr 01 2023</div>
                       <p class="card-text mb-auto">They got to know each other while filming “The Glory”</p>
                       <a href="artikel_bp.php" class="stretched-link">Continue reading...</a>
                   </div>
@@ -127,7 +127,7 @@
                       </div>
                   <div class="col p-5 d-flex flex-column position-static">
                       <h3 class="mb-0">Kim Sae Ron faces fine of $15K for DUI & apologizes at first trial</h3>
-                      <div class="mb-1 text-muted">MAR 06</div>
+                      <div class="mb-1 text-muted">Mar 06 2023</div>
                       <p class="card-text mb-auto">As previously reported, Kim Sae Ron attended the first trial for violating the Road Traffic Act (DUI) at the 4th division of the Seoul Central District Court</p>
                       <a href="" class="stretched-link">Continue reading...</a>
                   </div>
@@ -140,7 +140,7 @@
                       </div>
                   <div class="col p-5 d-flex flex-column position-static">
                       <h3 class="mb-0">'The Glory' director Ahn Gil Ho faces bullying allegations</h3>
-                      <div class="mb-1 text-muted">MAR 05</div>
+                      <div class="mb-1 text-muted">Mar 05 2023</div>
                       <p class="card-text mb-auto">Director Ahn Gil Ho has been accused of being a school bully, the allegations have become a hot topic as 'The Glory' is a drama that follows a character who suffered severe bullying in high school</p>
                       <a href="" class="stretched-link">Continue reading...</a>
                   </div>
@@ -153,7 +153,7 @@
                       </div>
                   <div class="col p-5 d-flex flex-column position-static">
                       <h3 class="mb-0">Pre-debut photos of 'Boys Planet' contestant Han Yujin spark dating rumors</h3>
-                      <div class="mb-1 text-muted">FEB 28</div>
+                      <div class="mb-1 text-muted">Feb 28 2023</div>
                       <p class="card-text mb-auto">Recently, pre-debut photos of the 'Boys Planet' contestant Han Yujin surfaced via a group chatroom, sparking numerous rumors</p>
                       <a href="" class="stretched-link">Continue reading...</a>
                   </div>
@@ -166,7 +166,7 @@
                       </div>
                   <div class="col p-5 d-flex flex-column position-static">
                       <h3 class="mb-0">Shinhan University investigation of actor Lee Bum Soo</h3>
-                      <div class="mb-1 text-muted">FEB 23</div>
+                      <div class="mb-1 text-muted">Feb 23 2023</div>
                       <p class="card-text mb-auto">Big Punch Entertainment announced that the internal investigation by Shinhan University about accusations of power abuse raised against the actor have concluded</p>
                       <a href="" class="stretched-link">Continue reading...</a>
                   </div>
