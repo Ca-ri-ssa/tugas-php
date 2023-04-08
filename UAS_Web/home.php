@@ -82,15 +82,17 @@
         <div class="container px-4 py-5" id="custom-cards">
           <div class="pb-2 border-bottom">
             <h2 class="pb-2" style="font-weight: bold; display: inline;">Today's News</h2>
-            <a href="add_news.php" style="display: inline; margin-left: 30px;">ADD</a>
+            <a href="add_news.php" style="display: inline; float: right;">ADD</a>
             </div>
           <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
             <!-- tambah news db php -->
             <div class="col">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/kard-home.png');">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img_news/<?php echo['img_news']?>');">
                   <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-                      <a href="" style="text-decoration: none; color: white">KARD is preparing comeback this April</a>
+                      <a href="article_read.php" style="text-decoration: none; color: white">
+                        <?php echo ['title']; ?>
+                      </a>
                     </h3>
                     <ul class="d-flex list-unstyled mt-auto">
                       <li class="me-auto">
@@ -98,14 +100,14 @@
                       </li>
                       <li class="d-flex align-items-center">
                         <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                        <small>2 minutes ago</small>
+                        <small><?php echo ['tanggal']; ?></small>
                       </li>
                     </ul>
                   </div>
                 </div>
             </div>
             <!-- end tambah news db php -->
-            
+
             <div class="col">
               <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/kard-home.png');">
                 <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">

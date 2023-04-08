@@ -1,33 +1,9 @@
-<?php
-  include("config.php");
-  if (isset($_POST['adddnews'])) {
-    $title=$_POST['title'];
-    $content=$_POST['content'];
-    $extension_allow	= array('png','jpg', 'jpeg');
-    $gb = $_FILES['file']['name'];
-    $x = explode('.', $gb);
-		$extension = strtolower(end($x));
-		$size = $_FILES['file']['size'];
-		$file_tmp = $_FILES['file']['tmp_name'];
-    if(in_array($extension, $extension_allow) === true){
-				if($size < 1044070){
-					move_uploaded_file($file_tmp, './img_news/'.$gb);
-                    $sql = mysqli_query($mysqli, "INSERT INTO news (title, content, date_news, img_news) VALUES ('$title', '$content', now(), '$gb')");
-					// $query = mysql_query("INSERT INTO upload VALUES(NULL, '$nama')");
-					if($sql){
-						echo 'FILE BERHASIL DI UPLOAD';
-					}else{
-						echo 'GAGAL MENGUPLOAD GAMBAR';
-					}
-				}else{
-					echo 'Size FILE TERLALU BESAR';
-				}
-			}else{
-				echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
-			}
-		}
-    // $perintah = mysqli_query($mysqli, "INSERT INTO tbl_berita (judul,isi,tanggal) VALUES ('$judul', '$isi' ,now())");
- ?>
+<?php require('config.php');
+    if(is_logged_in()){
+?>
+
+
+<?php include('config.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +23,7 @@
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="border-bottom: 2px solid #7C924E; background-color: white;">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="border-bottom: 2px solid #7C924E; background-color: white;">
       <div class="container-fluid">
         <a href="#"><img src="img/LOGO.png" style="width: 100px;"></a>
         <button class="navbar-toggler btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #7C924E">
@@ -95,25 +71,30 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> -->
 <div class="container" style="margin-top: 80px;">
     <h3 class="pb-2 border-bottom">Tambah Berita</h3>
     <form action="" method="post" enctype="multipart/form-data">
         <div style="padding: 0 50px;">
             <div class="col-12">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="" fvalue="<?php echo $row['title'] ?>" dprocessedid="l7js95">
+                <input type="text" class="form-control" id="title" name="title" placeholder="" fvalue="" dprocessedid="l7js95">
             </div>
             <div class="col-12" style="margin-top: 10px;">
                 <label for="content" class="form-label">Content</label>
-                <textarea class="form-control" id="content" name="content" placeholder="" fvalue="<?php echo $row['content'] ?>" dprocessedid="l7js95"></textarea>
+                <textarea class="form-control" id="content" name="content" placeholder="" fvalue="" dprocessedid="l7js95"></textarea>
             </div>
             <div class="col-12" style="margin-top: 10px;">
                 <label for="img_news" class="form-label">News Image</label>
-                <input type="file" class="form-control" id="img_news" name="file" placeholder="" fvalue="<?php echo $row['img_news'] ?>" dprocessedid="l7js95">
+                <input type="file" class="form-control" id="img_news" name="file" placeholder="" fvalue="" dprocessedid="l7js95">
             </div>
-            <input class="btn btn-success" style="float: right; margin-top: 20px;" type="submit" name="addnews" value="tambah berita">
+            <input class="btn btn-success" style="float: right; margin-top: 20px;" type="submit" name="addnews" value="Save">
         </div>
     </form>
 </div>
 </body>
+
+
+<?php  } else {
+    header('Location: ../index.php');
+}
