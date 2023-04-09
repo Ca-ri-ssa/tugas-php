@@ -68,11 +68,14 @@
       </div>
     </nav>
 
-    <!-- ingat edit -->
     <?php
     $query="SELECT * FROM news WHERE id_news = '$_GET[id_news]'";
-    $result = mysqli_query($conn, $query);
+    $result = $conn->query($query);
     $row = mysqli_fetch_assoc($result);
+    $id_news = $row['id_news'];
+    $title = $row['title'];
+    $content = $row['content'];
+    $news_image = $row['news_image'];
     ?>
 
     <div class="container" style="margin-top: 80px;">

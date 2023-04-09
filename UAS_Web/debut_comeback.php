@@ -126,11 +126,13 @@ require ("config.php");
                     <img src="img/<?php echo $row['news_image'] ?>" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
                     </div>
                   <div class="col p-5 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-success" style="font-size: 16px;"><?php echo $row['category'] ?></strong>
+                    <div>
+                      <strong class="d-inline-block mb-2 text-success" style="font-size: 16px;"><?php echo $row['category'] ?></strong>
+                    </div>
                     <h3 class="mb-0"><?php echo $row['title'] ?></h3>
                     <div class="mb-1 text-muted"><?php echo $row['date_news'] ?></div>
                     <p class="card-text mb-auto"><?php echo $row['desc_news'] ?></p>
-                    <a href="read_news.php?id_news=<?php echo $row['id_news'] ?>" class="stretched-link" name="read">Continue reading...</a>
+                    <a href="read_news.php?id_news=<?php echo $row['id_news'] ?>" class="stretched-link" name="read" style="display: inline;">Continue reading...</a>
                   </div>
                 </div>
             </div>

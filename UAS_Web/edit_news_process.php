@@ -22,7 +22,7 @@ if (isset($_POST['edit'])) {
 					// $query = mysql_query("INSERT INTO upload VALUES(NULL, '$nama')");
 					if($sql){
 						// echo 'FILE BERHASIL DI UPLOAD';
-                        header("location: home.php"); //location output page
+                        header("location: debut_comeback.php"); //location output page
 					}else{
 						echo 'Upload file failed';
 					}
@@ -32,6 +32,5 @@ if (isset($_POST['edit'])) {
 			}else{
 				echo 'Not allowed uploaded extension file';
 			}
-    // header("location:index.php");
   }
  ?>
