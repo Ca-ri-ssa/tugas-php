@@ -95,7 +95,34 @@
                     <label for="news_image" class="form-label">News Image</label>
                     <input type="file" class="form-control" id="news_image" name="news_image" placeholder="" value="<?php echo $row['news_image'] ?>" dprocessedid="l7js95">
                 </div>
-                <input class="btn btn-success" style="float: right; margin: 50px 0;" name="add" type="submit" value="Save">
+                <div class="col-12" style="margin-top: 30px;">
+                    <p class="form-label">News Category</p>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="category" id="category" value="<?php echo $row['category'] ?>" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Debut
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="category" id="category" value="<?php echo $row['category'] ?>" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Comeback
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="category" id="category" value="<?php echo $row['category'] ?>" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        K-Group
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="category" id="category" value="<?php echo $row['category'] ?>" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        K-Drama
+                      </label>
+                    </div>
+                </div>
+                <input class="btn btn-success" style="float: right; margin: 50px 0;" name="edit" type="submit" value="Save">
             </div>
         </form>
     </div>
