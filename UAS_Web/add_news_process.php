@@ -7,6 +7,7 @@ $desc_news = $_POST['desc_news'];
 $content = $_POST['content'];
 $date_news = date("M d Y");
 $news_image = $_FILES['news_image']['name'];
+$category = $_POST['category'];
 
 if (isset($_POST['add'])) {
     $ext_allow = array('png','jpg', 'jpeg');
@@ -18,21 +19,19 @@ if (isset($_POST['add'])) {
     if(in_array($ext, $ext_allow) === true){
 		if($size < 1044070){
 			move_uploaded_file($file_tmp, './img_news/'.$imgnews);
-            $sql = mysqli_query($conn, "INSERT INTO news (title, desc_news, content, date_news, news_image) VALUES ('$title', '$desc_news', '$content', now(), '$imgnews')");
+            $sql = mysqli_query($conn, "INSERT INTO news (title, desc_news, content, date_news, news_image, category) VALUES ('$title', '$desc_news', '$content', now(), '$imgnews', '$category')");
 					// $query = mysql_query("INSERT INTO upload VALUES(NULL, '$nama')");
 					if($sql){
 						// echo 'FILE BERHASIL DI UPLOAD';
                         header("location: home.php"); //location output page
 					}else{
-						echo 'GAGAL MENGUPLOAD GAMBAR';
+						echo 'Upload file failed';
 					}
 				}else{
-					echo 'UKURAN FILE TERLALU BESAR';
+					echo 'File size too big';
 				}
 			}else{
-				echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
+				echo 'Not allowed uploaded extension file';
 			}
 		}
-    // $perintah = mysqli_query($mysqli, "INSERT INTO tbl_berita (judul,isi,tanggal) VALUES ('$judul', '$isi' ,now())");
-
  ?>
