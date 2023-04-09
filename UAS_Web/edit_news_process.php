@@ -32,6 +32,6 @@ if (isset($_POST['edit'])) {
 			}else{
 				echo 'Not allowed uploaded extension file';
 			}
-    header("location:index.php");
+    // header("location:index.php");
   }
  ?>

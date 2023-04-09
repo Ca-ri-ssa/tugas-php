@@ -91,27 +91,15 @@
                 <div class="col-12" style="margin-top: 30px;">
                     <p class="form-label">News Category</p>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="category" id="category" value="debut" checked>
+                      <input class="form-check-input" type="radio" name="category" id="category" value="Debut" checked>
                       <label class="form-check-label" for="flexRadioDefault2">
                         Debut
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="category" id="category" value="comeback" checked>
+                      <input class="form-check-input" type="radio" name="category" id="category" value="Comeback" checked>
                       <label class="form-check-label" for="flexRadioDefault2">
                         Comeback
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="category" id="category" value="k-group" checked>
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        K-Group
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="category" id="category" value="k-drama" checked>
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        K-Drama
                       </label>
                     </div>
                 </div>

@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="profile_edit.css" />
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars/">
   <link href="bootstrap/bootstrap-5.2.3-examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-  <title>Add News</title>
+  <title>Edit News</title>
   <link rel="icon" type="image/png" href="img/logo-bg.png">
 </head>
 <body>
@@ -107,18 +107,6 @@
                       <input class="form-check-input" type="radio" name="category" id="category" value="<?php echo $row['category'] ?>" checked>
                       <label class="form-check-label" for="flexRadioDefault2">
                         Comeback
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="category" id="category" value="<?php echo $row['category'] ?>" checked>
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        K-Group
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="category" id="category" value="<?php echo $row['category'] ?>" checked>
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        K-Drama
                       </label>
                     </div>
                 </div>
