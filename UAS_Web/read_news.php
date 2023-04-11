@@ -50,8 +50,8 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="vertical-align: middle; color: #198754;">All</a>
 
             <ul class="dropdown-menu dropdwown-menu-light" aria-labelledby="navbarDropdownNews">
-              <li><a class="dropdown-item" href="debut_comeback.php" style="color: black;">Debut/Comeback</a></li>
-              <li><a class="dropdown-item" href="k-drama.php" style="color: #198754;">K-Drama</a></li>
+              <li><a class="dropdown-item" href="debut_comeback.php" style="color: #198754;">Debut/Comeback</a></li>
+              <li><a class="dropdown-item" href="k-drama.php" style="color: black;">K-Drama</a></li>
               <li><a class="dropdown-item" href="hot_scandals.php" style="color: black;">Hot Scandals</a></li>
             </ul>
           </li>
@@ -118,8 +118,8 @@
         
         </svg>
       </a>
-    </div> 
-    <p style="text-align: center; margin-bottom: 50px;">&copy; 2022 O-KI!, Inc. All rights reserved.</p>
+    </div>
+    <p style="text-align: center; margin-bottom: 50px;">&copy; 2022-<script>document.write(new Date().getFullYear())</script> O-KI, Inc. All Rights Reserved.</p>
   </div>
     <!-- End Footer -->
   </body>

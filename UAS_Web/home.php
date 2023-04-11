@@ -155,7 +155,7 @@
               <div class="col p-5 d-flex flex-column position-static">
                   <strong class="d-inline-block mb-2 text-success" style="font-size: 20px;">#1</strong>
                   <h3 class="mb-0">Blackpink Concert in Indonesia</h3>
-                  <div class="mb-1 text-muted">MAR 01</div>
+                  <div class="mb-1 text-muted">MAR 01 2023</div>
                   <p class="card-text mb-auto">Blackpink's concert will be held in Gelora Bung Karno, Jakarta.</p>
                   <a href="artikel_bp.php" class="stretched-link">Continue reading</a>
               </div>
@@ -332,7 +332,7 @@
         </svg>
       </a>
     </div> 
-    <p style="text-align: center; margin-bottom: 50px;">&copy; 2022 O-KI!, Inc. All rights reserved.</p>
+    <p style="text-align: center; margin-bottom: 50px;">&copy; 2022-<script>document.write(new Date().getFullYear())</script> O-KI, Inc. All Rights Reserved.</p>
   </div>
     <!-- End Footer -->
   </body>

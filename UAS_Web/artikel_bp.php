@@ -69,7 +69,6 @@
   <div class="container-fluid" style="margin: 80px 0 20px 0; padding: 0 100px; border-bottom: 2px solid #7C924E">
     <h2 style="text-align: center;">Blackpink Concert in Indonesia</h2>
     <div style="text-align: right; margin-bottom: 30px;">
-      <a style="font-size: 16px; display: inline; margin-right: 20px;" href="">Edit</a>
       <p style="font-size: 12px; display: inline; margin-right: 20px;">Written by: O-KI</p>
       <p style="font-size: 12px; display: inline;">01 March 2023</p>
     </div>
@@ -114,7 +113,7 @@
         </svg>
       </a>
     </div> 
-    <p style="text-align: center; margin-bottom: 50px;">&copy; 2022 O-KI!, Inc. All rights reserved.</p>
+    <p style="text-align: center; margin-bottom: 50px;">&copy; 2022-<script>document.write(new Date().getFullYear())</script> O-KI, Inc. All Rights Reserved.</p>
   </div>
     <!-- End Footer -->
   </body>

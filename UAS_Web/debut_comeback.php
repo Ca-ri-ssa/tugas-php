@@ -112,7 +112,7 @@ require ("config.php");
         <div class="container">
           <div class="pb-2 border-bottom">
             <h2 style="font-weight: bold; margin-top: 50px; margin-bottom: 55px; display: inline;">Debuts / Comebacks</h2>
-            <a href="add_news.php" style="display: inline; float: right;">ADD</a>
+            <button onclick="location.href='add_news.php'" class="btn btn-success" style="display: inline; float: right;">ADD</a>
           </div>
           <!-- php news -->
           <?php

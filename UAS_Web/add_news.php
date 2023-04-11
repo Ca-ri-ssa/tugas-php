@@ -28,14 +28,14 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ms-auto my-2 my-lg-0" style="font-size: 16px; margin-left: 6px; color: black;">
             <li class="nav-item">
-              <a class="nav-link active"  aria-current="page" href="home.php"><span style="color: #198754;">Home</span></a>
+              <a class="nav-link active"  aria-current="page" href="home.php"><span style="color: black;">Home</span></a>
             </li>
                     
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="vertical-align: middle; color: black;">All</a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="vertical-align: middle; color: #198754;">All</a>
 
               <ul class="dropdown-menu dropdwown-menu-light" aria-labelledby="navbarDropdownNews">
-                <li><a class="dropdown-item" href="debut_comeback.php" style="color: black;">Debut/Comeback</a></li>
+                <li><a class="dropdown-item" href="debut_comeback.php" style="color: #198754;">Debut/Comeback</a></li>
                 <li><a class="dropdown-item" href="k-drama.php" style="color: black;">K-Drama</a></li>
                 <li><a class="dropdown-item" href="hot_scandals.php" style="color: black;">Hot Scandals</a></li>
               </ul>
@@ -107,4 +107,6 @@
             </div>
         </form>
     </div>
+    <script src="bootstrap/bootstrap-5.2.3-examples/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
 </body>
