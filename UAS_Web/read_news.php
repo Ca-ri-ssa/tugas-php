@@ -85,8 +85,10 @@
 
   <div class="container-fluid" style="margin: 80px 0 20px 0; padding: 0 100px; border-bottom: 2px solid #7C924E">
     <h2 style="text-align: center;"><?php echo $row['title'] ?></h2>
+    <button type="button" class="btn btn-outline-success" disabled><?php echo $row['category'] ?></button>
     <div style="text-align: right; margin-bottom: 30px;">
-        <a href="edit_news.php?id_news=<?php echo $row['id_news'] ?>" class="stretched-link" name="edit" style="display: inline; margin: 0 20px 0 800px;">Edit</a>
+        <button onclick="location.href='edit_news.php?id_news=<?php echo $row['id_news'] ?>'" class="btn btn-primary" name="edit" style="display: inline; margin: 0 20px 0 800px;">Edit</button>
+        <button onclick="location.href='delete_news.php?id_news=<?php echo $row['id_news'] ?>'" class="btn btn-danger" name="delete" style="display: inline; margin: 0 20px 0 0;">Delete</button>
         <p style="font-size: 12px; display: inline; margin-right: 20px;">Written by: O-KI</p>
         <p style="font-size: 12px; display: inline;"><?php echo $row['date_news'] ?></p>
     </div>
