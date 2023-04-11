@@ -88,7 +88,16 @@
     <button type="button" class="btn btn-outline-success" disabled><?php echo $row['category'] ?></button>
     <div style="text-align: right; margin-bottom: 30px;">
         <button onclick="location.href='edit_news.php?id_news=<?php echo $row['id_news'] ?>'" class="btn btn-primary" name="edit" style="display: inline; margin: 0 20px 0 800px;">Edit</button>
-        <button onclick="location.href='delete_news.php?id_news=<?php echo $row['id_news'] ?>'" class="btn btn-danger" name="delete" style="display: inline; margin: 0 20px 0 0;">Delete</button>
+        <button onclick="del()" class="btn btn-danger" name="delete" style="display: inline; margin: 0 20px 0 0;">Delete</button>
+        <script>
+          function del() {
+                if (confirm("Are you sure to delete this article?")) {
+                  window.location.href='delete_news.php?id_news=<?php echo $row['id_news'] ?>';
+                } else {
+                  window.location.href='';
+                }
+              }
+        </script>
         <p style="font-size: 12px; display: inline; margin-right: 20px;">Written by: O-KI</p>
         <p style="font-size: 12px; display: inline;"><?php echo $row['date_news'] ?></p>
     </div>
