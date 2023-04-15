@@ -90,11 +90,20 @@
   </nav>
 
   <!-- banner -->
-  <div class="banner" style="margin-top: 60px;">
+  <?php
+    $homebanner = "SELECT * FROM home_banner ORDER BY id_banner DESC'";
+    $result = mysqli_query($conn, $homebanner);
+    $row = mysqli_fetch_assoc($result);
+  ?>
+  <div class="banner" style="margin-top: 60px; background-image: url('data:image/png;base64,<?php echo base64_encode($row['imgnews_banner']) ?>');">
       <div class="content" style="text-align: center;">
-        <h1 style="margin-top: 50px;">Discover Whats Happen In Kpop</h1>
-        <p>Comebacks, Debuts, Dating Rumors, Etc.</p>
-        <a class="btn btn-success" href="news.php" role="button">Discover Now</a>
+        <h1 style="margin-top: 50px;"><?php echo $row['title_banner'] ?></h1>
+        <p><?php echo $row['desc_banner'] ?></p>
+        <a class="btn btn-success" href="all_news.php" role="button">Discover Now</a>
+      </div>
+      <div style="margin-top: 50px;">
+        <a onclick="location.href='edit_home_banner.php?id_banner=<?php echo $row['id_banner'] ?>'"class="btn btn-success" style="margin: 10px 30px 20px 20px; float: right;">edit</a>
+        <a onclick="location.href='add_home_banner.php'" class="btn btn-primary" style="margin: 10px 0px 20px 30px; float: right;">add</a>
       </div>
   </div>
   <!-- banner -->
