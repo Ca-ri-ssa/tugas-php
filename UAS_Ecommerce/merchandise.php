@@ -1,3 +1,7 @@
+<?php
+    require('config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +16,6 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
     <link href="bootstrap/bootstrap-5.2.3-examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Merchandise</title>
-    <link rel="stylesheet" href="merchandise.css" />
     <link rel="icon" type="image/png" href="img/logo-rd.png">
 </head>
 <body>
@@ -27,17 +30,21 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ms-auto my-2 my-lg-0" style="font-size: 16px; margin-left: 6px; color: black;">
             <li class="nav-item">
-                <a class="nav-link active"  aria-current="page" href="index.php"><span style="color: black;">Home</span></a>
+                <a class="nav-link"  aria-current="page" href="homepage.php"><span style="color: black;">Home</span></a>
             </li>
                     
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="vertical-align: middle; color: #198754;">News</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="vertical-align: middle; color: #198754;">All</a>
 
                 <ul class="dropdown-menu dropdwown-menu-light" aria-labelledby="navbarDropdownNews">
-                <li><a class="dropdown-item" href="news.php" style="color: black;">News</a></li>
-                <li><a class="dropdown-item" href="merchandise.html" style="color: #198754;">Merchandise</a></li>
-                <li><a class="dropdown-item" href="ticket.html" style="color: black;">Ticket Concert</a></li>
+                    <li><a class="dropdown-item" href="news.php" style="color: black;">News</a></li>
+                    <li><a class="dropdown-item" href="merchandise.php" style="color: green;">Merchandise</a></li>
+                    <li><a class="dropdown-item" href="ticket.php" style="color: black;">Ticket Concert</a></li>
                 </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="purchase_history.php" style="color: black;">Purchase List</a>
             </li>
             
             <li class="nav-item">
@@ -55,7 +62,7 @@
                 <script>
                 function myFunction() {
                     if (confirm("Are you sure to log out?")) {
-                    window.location.href='log_in.php';
+                    window.location.href='log_out.php';
                     } else {
                     window.location.href='';
                     }
@@ -74,33 +81,30 @@
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
 
-        <div class="carousel-inner" style="height: 400px;">
+        <div class="carousel-inner" style="height: 500px;">
           <div class="carousel-item active 1">
-            <svg class="bd-placeholder-img-1" width="100%" height="100%"><rect width="100%" height="100%" fill="url(img/blackpink\ lightstick.jpg)"/></svg>
+            <svg class="bd-placeholder-img-1" width="100%" height="100%"><rect width="100%" height="100%" fill="url(img/merchandise/header/lightstick.png)"/></svg>
               <div class="container">
                 <div class="carousel-caption text-start" style="padding-left: 10px;">
-                  <h1>Byongbong</h1>
-                  <p>Blackpink; Blink's lightstick</p>
+                    <h1></h1>
                 </div>
             </div>
           </div>
 
           <div class="carousel-item 2">
-            <svg class="bd-placeholder-img-2" width="100%" height="100%"><rect width="100%" height="100%" fill="url(img/bts\ lightstick.jpg)"/></svg>
+            <svg class="bd-placeholder-img-2" width="100%" height="100%"><rect width="100%" height="100%" fill="url(img/merchandise/header/album.png)"/></svg>
               <div class="container">
                 <div class="carousel-caption text-start" style="padding-left: 10px;">
-                  <h1>Army Bomb</h1>
-                  <p>Bts; Army's lightstick</p>
+                    <h1></h1>
                 </div>
               </div>
           </div>
 
           <div class="carousel-item 3">
-            <svg class="bd-placeholder-img-3" width="100%" height="100%"><rect width="100%" height="100%" fill="url(img/nct\ lightstick.jpg)"/></svg> 
+            <svg class="bd-placeholder-img-3" width="100%" height="100%"><rect width="100%" height="100%" fill="url(img/merchandise/header/photocard.png)"/></svg> 
               <div class="container">
                 <div class="carousel-caption text-start" style="padding-left: 10px;">
-                  <h1>Wonbong</h1>
-                  <p>Nct; NCTzen's lightstick</p>
+                  <h1></h1>
                 </div>
               </div>
           </div>
@@ -122,96 +126,163 @@
             <button class="btn btn-success" type="submit">Search</button>
         </form>
         <div class="container px-4 py-5" id="custom-cards">
-            <h2 class="pb-2 border-bottom" style="font-weight: bold;">Album</h2>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-top: 45px; margin-bottom: 20px;">
+            <h2 class="pb-2 border-bottom" style="font-weight: bold;">Album <a style="font-weight:bold; float: right; color: #7C924E; font-size: 18px; padding-top: 12px; text-decoration:none" href="tambahalbum.php">+album</a></h2>
+            <div class="album-kategori">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-top: 45px; margin-bottom: 20px;">
+                    <?php
+                        $album = mysqli_query($conn, "SELECT * FROM Album ORDER BY id_album DESC");
+                        //if(mysqli_num_rows($album) > 0){
+                            while($ambil = mysqli_fetch_array($album)){
+                    ?>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="data:image/png;base64,<?php echo base64_encode($ambil['image']) ?>" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <div class="card-body">
+                                <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;"><?php echo $ambil['Title'] ?></h4>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="album.php?idh=<?php echo $ambil['id_album']?>">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="editalbum.php?id=<?php echo $ambil['id_album']?>">Edit</a></button>
+                                    </div>
+                                    <!-- <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="editalbum.php?id=<?php echo $ambil['id_album']?>">Edit</a></button>
+                                    </div> -->
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="hapusalbum.php?idm=<?php echo $ambil['id_album']?>">Delete</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php }?>
+                </div>
+            </div>
+        
+            <!-- <div class="album-kategori">
+                <?php
+                    $album = mysqli_query($conn, "SELECT * FROM Album ORDER BY id_album DESC");
+                    //if(mysqli_num_rows($album) > 0){
+                        while($ambil = mysqli_fetch_array($album)){
+                ?>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-top: 45px; margin-bottom: 20px;">
+                        <div class="col">
+                            <div class="card shadow-sm">
+                            <img src="data:image/png;base64,<?php echo base64_encode($ambil['image']) ?>" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <div class="card-body">
+                                <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;"><?php echo $ambil['Title'] ?></h4>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="album.php?idh=<?php echo $ambil['id_album']?>">View</button>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="editalbum.php?id=<?php echo $ambil['id_album']?>">Edit</a></button>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="hapusalbum.php?idm=<?php echo $ambil['id_album']?>">Delete</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php }?>
+            </div> -->
+
+            <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-top: 45px; margin-bottom: 20px;">
                 <div class="col">
                     <div class="card shadow-sm">
-                    <img src="img/nct-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="img/merchandise/album/beatbox-abum.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                     <div class="card-body">
-                        <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">NCT NeoBong Lightstick</h4>
+                        <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">Born Pink - Blackpink 2nd Album</h4>
                         <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-success">View</button>
-                        </div>
-                        <small class="text-muted">Rp 650.000</small>
-                        </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-success" href="Bornpink.php">View</button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-success" href="editmerchandise.php">Edit</button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-success" href="">Delete</button>
+                            </div>-->
+                            <!-- <small class="text-muted">Rp 250.000</small> -->
+                        <!--</div>
                     </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="img/aespa-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="img/merchandise/album/bornpink-album.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <div class="card-body">
-                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">AESPA Dreamus Lightstick</h4>
+                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">Beatbox - Nct Dream 2nd Album</h4>
                             <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-success">View</button>
                             </div>
-                            <small class="text-muted">Rp 635.000</small>
+                            <small class="text-muted">Rp 459.000</small>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="img/bp-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="img/merchandise/album/butter-album.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <div class="card-body">
-                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">BLACKPINK Lightstick ver 2</h4>
+                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">Butter - BTS Album</h4>
                             <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-success">View</button>
                             </div>
-                            <small class="text-muted">Rp 510.000</small>
+                            <small class="text-muted">Rp 410.000</small>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-top: 45px; margin-bottom: 20px;">
+            <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-top: 45px; margin-bottom: 20px;">
                 <div class="col">
                     <div class="card shadow-sm">
-                    <img src="img/nct-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="img/merchandise/album/dynamite-album.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                     <div class="card-body">
-                        <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">NCT NeoBong Lightstick</h4>
+                        <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">Dynamite - BTS Album</h4>
                         <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <button type="button" class="btn btn-sm btn-outline-success">View</button>
                         </div>
-                        <small class="text-muted">Rp 650.000</small>
+                        <small class="text-muted">Rp 350.000</small>
                         </div>
                     </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="img/aespa-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="img/merchandise/album/glitchmode-album.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <div class="card-body">
-                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">AESPA Dreamus Lightstick</h4>
+                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">Glitch Mode - Nct Dream Album</h4>
                             <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-success">View</button>
                             </div>
-                            <small class="text-muted">Rp 635.000</small>
+                            <small class="text-muted">Rp 350.000</small>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="img/bp-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="img/merchandise/album/hotsauce-album.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <div class="card-body">
-                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">BLACKPINK Lightstick ver 2</h4>
+                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">Hot Sauce - Nct Dream Album</h4>
                             <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-success">View</button>
                             </div>
-                            <small class="text-muted">Rp 510.000</small>
+                            <small class="text-muted">Rp 270.000</small>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
 
@@ -220,42 +291,42 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-top: 45px; margin-bottom: 20px;">
                 <div class="col">
                     <div class="card shadow-sm">
-                    <img src="img/nct-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="img/merchandise/photocard/pc-blackpink.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                     <div class="card-body">
-                        <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">NCT NeoBong Lightstick</h4>
+                        <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">Blackpink Photocard</h4>
                         <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <button type="button" class="btn btn-sm btn-outline-success">View</button>
                         </div>
-                        <small class="text-muted">Rp 650.000</small>
+                        <small class="text-muted">Rp 50.000</small>
                         </div>
                     </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="img/aespa-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="img/merchandise/photocard/pc-bts.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <div class="card-body">
-                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">AESPA Lightstick</h4>
+                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">BTS Photocard</h4>
                             <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-success">View</button>
                             </div>
-                            <small class="text-muted">Rp 635.000</small>
+                            <small class="text-muted">Rp 60.000</small>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="img/bp-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="img/merchandise/photocard/pc-exo.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <div class="card-body">
-                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">BLACKPINK Lightstick ver 2</h4>
+                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">EXO Photocard</h4>
                             <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-success">View</button>
                             </div>
-                            <small class="text-muted">Rp 510.000</small>
+                            <small class="text-muted">Rp 60.000</small>
                             </div>
                         </div>
                     </div>
@@ -265,42 +336,42 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-top: 45px; margin-bottom: 20px;">
                 <div class="col">
                     <div class="card shadow-sm">
-                    <img src="img/nct-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="img/merchandise/photocard/pc-nctdream.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                     <div class="card-body">
-                        <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">NCT NeoBong Lightstick</h4>
+                        <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">NCT Dream Photocard</h4>
                         <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <button type="button" class="btn btn-sm btn-outline-success">View</button>
                         </div>
-                        <small class="text-muted">Rp 650.000</small>
+                        <small class="text-muted">Rp 50.000</small>
                         </div>
                     </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="img/aespa-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="img/merchandise/photocard/pc-treasure.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <div class="card-body">
-                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">AESPA Dreamus Lightstick</h4>
+                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">Treasure Photocard</h4>
                             <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-success">View</button>
                             </div>
-                            <small class="text-muted">Rp 635.000</small>
+                            <small class="text-muted">Rp 40.000</small>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="img/bp-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="img/merchandise/photocard/pc-twice.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <div class="card-body">
-                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">BLACKPINK Lightstick ver 2</h4>
+                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">Twice Photocard</h4>
                             <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-success">View</button>
                             </div>
-                            <small class="text-muted">Rp 510.000</small>
+                            <small class="text-muted">Rp 50.000</small>
                             </div>
                         </div>
                     </div>
@@ -313,12 +384,12 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-top: 45px; margin-bottom: 20px;">
                 <div class="col">
                     <div class="card shadow-sm">
-                    <img src="img/nct-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="img/merchandise/lightstick/nct-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                     <div class="card-body">
                         <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">NCT NeoBong Lightstick</h4>
                         <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-success" ><a style="text-decoration:none; color: green" href="NeoBong.html">View</a></button>
+                            <button type="button" class="btn btn-sm btn-outline-success" ><a style="text-decoration:none; color: green" href="NeoBong.php">View</a></button>
                         </div>
                         <small class="text-muted">Rp 650.000</small>
                         </div>
@@ -327,7 +398,7 @@
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="img/aespa-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="img/merchandise/lightstick/aespa-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <div class="card-body">
                             <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">AESPA Lightstick</h4>
                             <div class="d-flex justify-content-between align-items-center">
@@ -341,7 +412,7 @@
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="img/bp-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="img/merchandise/lightstick/bp-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <div class="card-body">
                             <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">BLACKPINK Lightstick ver 2</h4>
                             <div class="d-flex justify-content-between align-items-center">
@@ -358,23 +429,23 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-top: 45px; margin-bottom: 20px;">
                 <div class="col">
                     <div class="card shadow-sm">
-                    <img src="img/nct-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="img/merchandise/lightstick/treasure-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                     <div class="card-body">
-                        <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">NCT NeoBong Lightstick</h4>
+                        <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">Treasure Teulight Lightstick</h4>
                         <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <button type="button" class="btn btn-sm btn-outline-success">View</button>
                         </div>
-                        <small class="text-muted">Rp 650.000</small>
+                        <small class="text-muted">Rp 850.000</small>
                         </div>
                     </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="img/aespa-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="img/merchandise/lightstick/exo-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <div class="card-body">
-                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">AESPA Dreamus Lightstick</h4>
+                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">Exo-L's Pharynx V3 Lightstick</h4>
                             <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-success">View</button>
@@ -386,14 +457,14 @@
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="img/bp-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="img/merchandise/lightstick/twice-lightstick.png" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <div class="card-body">
-                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">BLACKPINK Lightstick ver 2</h4>
+                            <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;">Twice Candybongz V2 Lightstick</h4>
                             <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-success">View</button>
                             </div>
-                            <small class="text-muted">Rp 510.000</small>
+                            <small class="text-muted">Rp 619.000</small>
                             </div>
                         </div>
                     </div>

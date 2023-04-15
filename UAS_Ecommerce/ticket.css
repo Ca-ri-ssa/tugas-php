@@ -43,27 +43,27 @@ body{
 }
 
 .bd-placeholder-img-1{
-    background-image: url(img/blackpink\ lightstick.jpg) !important;
+    background-image: url(img/ticket/header/blackpink.png) !important;
     background-repeat: no-repeat !important;
     background-size: cover;
     position: relative;
-    height: 400px;
+    height: 500px;
   }
 
   .bd-placeholder-img-2{
-    background-image: url(img/bts-idols.png) !important;
+    background-image: url(img/ticket/header/bts.png) !important;
     background-repeat: no-repeat !important;              
     background-size: cover;
     position: relative;
-    height: 400px;
+    height: 500px;
   }
     
   .bd-placeholder-img-3{
-    background-image: url(img/nct-idols.png) !important;
+    background-image: url(img/ticket/header/nct.png) !important;
     background-repeat: no-repeat !important;
     background-size: cover;
     position: relative;
-    height: 400px;
+    height: 500px;
   }
 
   .carousel-inner h1{

@@ -1,3 +1,16 @@
+<?php
+    require('config.php');
+    // session_start();
+
+    $data = mysqli_query($conn, "SELECT * FROM Album WHERE id_album = '".$_GET['idp']."' ");
+    $data2 = mysqli_fetch_object($data);
+
+    $username = $_SESSION['username'];
+    $form = mysqli_query($conn, "SELECT * FROM user WHERE username ='".$username."' ");
+    $formdata = mysqli_fetch_assoc($form);
+
+    $pembelian = $_GET['Quantity'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,17 +39,21 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ms-auto my-2 my-lg-0" style="font-size: 16px; margin-left: 6px; color: black;">
           <li class="nav-item">
-              <a class="nav-link active"  aria-current="page" href="index.php"><span style="color: black;">Home</span></a>
+              <a class="nav-link active"  aria-current="page" href="homepage.php"><span style="color: black;">Home</span></a>
           </li>
                   
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="vertical-align: middle; color: black;">News</a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="vertical-align: middle; color: black;">All</a>
 
               <ul class="dropdown-menu dropdwown-menu-light" aria-labelledby="navbarDropdownNews">
-              <li><a class="dropdown-item" href="news.php" style="color: black;">News</a></li>
-              <li><a class="dropdown-item" href="merchandise.html" style="color: black;">Merchandise</a></li>
-              <li><a class="dropdown-item" href="ticket.html" style="color: black;">Ticket Concert</a></li>
+                    <li><a class="dropdown-item" href="news.php" style="color: black;">All</a></li>
+                    <li><a class="dropdown-item" href="merchandise.php" style="color: black;">Merchandise</a></li>
+                    <li><a class="dropdown-item" href="ticket.php" style="color: black;">Ticket Concert</a></li>
               </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="purchase_history.php" style="color: black;">Purchase List</a>
           </li>
           
           <li class="nav-item">
@@ -54,7 +71,7 @@
               <script>
               function myFunction() {
                   if (confirm("Are you sure to log out?")) {
-                  window.location.href='log_in.php';
+                  window.location.href='log_out.php';
                   } else {
                   window.location.href='';
                   }
@@ -69,48 +86,32 @@
     <div class="container" style="margin-top: 70px;">
         <main>
           <div class="py-1 text-center">
-            <h1 style="margin-bottom: 30px; margin-top: 30px;">Payment</h1>
+            <h1 style="margin-bottom: 30px; margin-top: 10px; font-weight: bold">Payment</h1>
           </div>
               
           <div class="row g-5">
+              <?php
+                $id = $data2->id_album;
+                $album = mysqli_query($conn, "SELECT image FROM album WHERE id_album = $id");
+                $ambil = mysqli_fetch_assoc($album);
+              ?>
             <div class="col-md-5 col-lg-4 order-md-last">
                 <h2 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-pimary" style="font-weight: bolder;">Merchandise</span>
+                    <span class="text-pimary" style="font-weight: bolder;">Shop</span>
                 </h2>
-                <img src="img/nct-lightstick.png" class="img-thumbnail" alt="...">
-                <h4 style="font-weight: bold; padding-top: 10px;">NaeBong</h4>
-                <p style="text-align: justify;">
-                    NeoBong is the lightstick for the fandom of NCT korean boy group from south korea. Neobong are known for the shape that look like a cube and the characteristics which is the neon color. NeoBong first design that shown to the public were on the NCT 2018 Fan Party and officially sold on 23 May 2018.
-                </p>
-
-                <p>
-                    Included:
-                    <br/>- Lightstick
-                    <br/>- Box cover
-                    <br/>- Guidance
-                    <br/>- Warranty
-                    <br/>- Strap
-                </p>
-
-                <hr color="#7C924E">
-
-                <p style="font-weight: bold;">Review: &#11088;&#11088;&#11088;&#11088;&#11088;</p>
-                <p>- Quality: &#11088;&#11088;&#11088;&#11088;&#11088;</p>
-                <p>- Price: &#11088;&#11088;&#11088;&#11088;&#11088;</p>
-                <p>- Design: &#11088;&#11088;&#11088;&#11088;&#11088;</p>
-                <p>- Convenience: &#11088;&#11088;&#11088;&#11088;&#11088;</p>
-                
-                <hr color="#7C924E">
-                <p><b>Total Harga: </b></p>
+                <img src="data:image/png;base64,<?php echo base64_encode($ambil['image']) ?>" class="img-thumbnail">
+                <h4 style="font-weight: bold; padding-top: 10px;"><?php echo $data2->Title ?></h4>
+                <p style="text-align: justify;"> <?php echo $data2->deskripsi ?></p>
+                <h5><b>Total Harga: Rp <?php echo $pembelian * $data2->harga ?></b></h5>
             </div>
         
             <div class="col-md-7 col-lg-8">
             <h2 class="mb-3" style="font-weight: bold;">Isi Data</h2>
-            <form class="needs-validation" novalidate="">
+            <form class="needs-validation" novalidate="" method="POST" action="donepurchase.php?id=<?php echo $data2->id_album?>">
               <div class="row g-3">
                 <div class="col-sm-6">
                   <label for="firstName" class="form-label">First name</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required="" fdprocessedid="hpeba">
+                  <input type="text" class="form-control" id="firstName" placeholder="" value="<?php echo $formdata['firstName']?>" required="" fdprocessedid="hpeba">
                   <div class="invalid-feedback">
                     Valid first name is required.
                   </div>
@@ -118,7 +119,7 @@
     
                 <div class="col-sm-6">
                   <label for="lastName" class="form-label">Last name</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required="" fdprocessedid="gb2k3d">
+                  <input type="text" class="form-control" id="lastName" placeholder="" value="<?php echo $formdata['lastName']?>" required="" fdprocessedid="gb2k3d">
                   <div class="invalid-feedback">
                     Valid last name is required.
                   </div>
@@ -126,7 +127,7 @@
               
                 <div class="col-12">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                  <input type="email" class="form-control" id="email" placeholder="you@example.com" value="<?php echo $formdata['email']?>" required>
                   <div class="invalid-feedback">
                     Please enter a valid email address for payment.
                   </div>
@@ -134,7 +135,7 @@
     
                 <div class="col-12">
                   <label for="phone" class="form-label">Phone Number</label>
-                  <input type="tel" class="form-control" id="phone" placeholder="+62" required>
+                  <input type="tel" class="form-control" id="phone" placeholder="+62" value="<?php echo $formdata['phone']?>" required>
                   <div class="invalid-feedback">
                     Please enter a valid phone number for payment.
                   </div>
@@ -142,7 +143,7 @@
     
                 <div class="col-12">
                   <label for="payment" class="form-label">Address</label>
-                  <input type="url" class="form-control" id="payment" placeholder="Masukkan link Google Maps" required>
+                  <input type="url" class="form-control" id="payment" placeholder="Masukkan link Google Maps" value="<?php echo $formdata['address']?>" required>
                   <div class="invalid-feedback">
                     Please enter a valid address for delivery.
                   </div>
@@ -150,49 +151,71 @@
     
                 <div class="col-12">
                   <label for="qty" class="form-label">Quantity</label>
-                  <input type="number" class="form-control" id="qty" placeholder="0" min="0" required>
+                  <input type="text" class="form-control" id="qty" placeholder="0" value="<?php echo $pembelian?>" required>
                   <div class="invalid-feedback">
                     Please enter a valid address for delivery.
                   </div>
                 </div>
     
-              <hr class="my-3" style="color:#7C924E; margin-top: 20px;">
-              <h2 class="mb-0" style="font-weight: bold;">Payment</h2>
-              <div class="my-3">
+                <hr class="my-3" style="color:#7C924E; margin-top: 20px;">
+                <h2 class="mb-0" style="font-weight: bold;">Payment</h2>
+                <div class="my-3">
                   <div class="form-check">
-                    <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+                    <input id="credit" name="payment" type="radio" class="form-check-input" checked="" required="">
                     <label class="form-check-label" for="credit">Credit card</label>
                   </div>
                   <div class="form-check">
-                    <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
+                    <input id="debit" name="payment" type="radio" class="form-check-input" required="">
                     <label class="form-check-label" for="debit">Debit card</label>
                   </div>
                   <div class="form-check">
-                    <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
+                    <input id="paypal" name="payment" type="radio" class="form-check-input" required="">
                     <label class="form-check-label" for="paypal">PayPal</label>
                   </div>
                 </div>
+
                 <div class="row gy-2">
                   <div class="col-md-6">
                     <label for="cc-name" class="form-label">Name on card</label>
-                    <input type="text" class="form-control" id="cc-name" placeholder="" required="" fdprocessedid="ucwf8">
+                      <input type="text" class="form-control" id="cc-name" placeholder="" fdprocessedid="ucwf8" required>
                     <small class="text-muted">Full name as displayed on card</small>
                     <div class="invalid-feedback">
                       Name on card is required
                     </div>
                   </div>
-      
+        
                   <div class="col-md-6">
-                    <label for="cc-number" class="form-label">Credit card number</label>
-                    <input type="text" class="form-control" id="cc-number" placeholder="" required="" fdprocessedid="q4drls">
+                    <label for="cc-number" class="form-label">Card number</label>
+                    <input type="text" class="form-control" id="cc-number" placeholder="" fdprocessedid="q4drls" required>
                     <div class="invalid-feedback">
                       Credit card number is required
                     </div>
                   </div>
                 </div>
-              <hr class="my-4">
-              <button class="w-100 btn" type="submit" fdprocessedid="te13ca" style="background-color: #7C924E; color: white;">Done Payment</button>
+                <input type="hidden" style="display-none" name="image" placeholder="Gambar Album" value="data:image/png;base64,<?php echo base64_encode($ambil['image'])?>"><br/>
+                <hr class="my-4">
+                <!-- <input type="submit" name="submit" placeholder="simpan" class="btn btn-lg btn-primary center-block" fdprocessedid="te13ca" value="Done Payment" style="color: white; border:2px solid #7C924E; background-color:#7C924E; size:10; width:400px; float:center; text-align:center; position:relative; margin-left:200px"> -->
+                <button class="w-100 btn" type="submit" fdprocessedid="te13ca" style="background-color: #7C924E; color: white;">Done Payment</button>
+              </div>
             </form>
+            <?php
+              if(isset($_POST['submit'])){
+                  // $image = $ambil['image'];
+                  $tmp_barang = $_FILES['image']['tmp_name'];
+                  $nama_barang = $data2->Title;
+                  $harga_barang = ($pembelian * $data2->harga);
+                  $kuantitas_barang = $pembelian;
+                  $tanggal_purchase = date('Y-m-d');
+                  $status_barang = "Pembelian Barang Sedang di Proses";
+                  // $tmp_barang = $_FILES['image']['tmp_name'];
+                  $gambar = file_get_contents($tmp_barang);
+                  $image = mysqli_real_escape_string($conn, $gambar);
+
+                  $simpan = "INSERT INTO purchaselist VALUES (null, '".$image."', '".$nama_barang."', '".$harga_barang."', '".$kuantitas_barang."', '".$tanggal_purchase."', '".$status_barang."')";
+                  mysqli_query($conn, $simpan);
+                  mysqli_close($conn);
+              }
+            ?>
           </div>
         </main>
       </div>

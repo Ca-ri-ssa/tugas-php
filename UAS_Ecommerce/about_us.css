@@ -79,11 +79,6 @@
     padding: 0;
 }
 
-body {
-    background: url(img/bg.png) top center repeat ;
-}
-
-/* navbar logout */
-.pointer{
-    cursor: pointer;
-}
+/* body {
+    background-color:white;
+} */

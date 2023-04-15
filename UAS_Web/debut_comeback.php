@@ -119,6 +119,8 @@ require ("config.php");
             $query = "SELECT * FROM news ORDER BY id_news DESC";
             $result = mysqli_query($conn, $query);
             $row = mysqli_fetch_assoc($result);
+
+            while($row = mysqli_fetch_array($result)){
           ?>
           <div class="col-12 fontart" style="margin-top: 15px;">
                 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -136,6 +138,7 @@ require ("config.php");
                   </div>
                 </div>
             </div>
+            <?php } ?>
           <!-- end php news -->
             <div class="col-12 fontart" style="margin-top: 15px;">
                 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">

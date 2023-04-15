@@ -64,7 +64,7 @@
         </div>
         </div>
     </nav>
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row">
             <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 250px; height: 1860px; margin-top: 60px;">
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -101,9 +101,9 @@
                         <li><a class="dropdown-item" href="#">Log out</a></li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
 
-            <main class="col-md-2 ms-sm-5 col-lg-10 px-md-12" style="border: 2px solid lightgray; width: 60%; float: left; box-shadow: 2px 2px 5px #0011; margin: 80px 0 70px 0;">
+            <main class="container" style="border: 2px solid lightgray; width: 70%;box-shadow: 2px 2px 5px #0011; margin: 80px 0 70px 200px; padding: 30px;">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-4 pb-2 mb-3 border-bottom">
                     <h2 style="padding-left: 15px;">Blackpink Concert in Indonesia</h2>
                     <p style="font-size: 12px; padding-top: 10px;">Written by: O-KI</p>
@@ -126,6 +126,8 @@
                 </p>
             </main>
         </div>
+        <script src="bootstrap/bootstrap-5.2.3-examples/assets/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
     </div>
 </body>
 </html>

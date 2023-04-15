@@ -72,11 +72,7 @@
     $query="SELECT * FROM news WHERE id_news = '$_GET[id_news]'";
     $result = $conn->query($query);
     $row = mysqli_fetch_assoc($result);
-    $id_news = $row['id_news'];
-    $title = $row['title'];
-    $content = $row['content'];
-    $news_image = $row['news_image'];
-    ?>
+    ?> GA BERES
 
     <div class="container" style="margin-top: 80px;">
         <h3 class="pb-2 border-bottom" style="margin-bottom: 50px;">Edit News</h3>
@@ -91,12 +87,20 @@
                     <textarea class="form-control" id="desc_news" name="desc_news" placeholder="" value="<?php echo $row['desc_news'] ?>" dprocessedid="l7js95"></textarea>
                 </div>
                 <div class="col-12" style="margin-top: 30px;">
-                    <label for="content" class="form-label">Content</label>
+                    <label for="news_image" class="form-label">News Image</label>
+                    <input type="file" class="form-control" id="news_image" name="news_image" placeholder="" value="<?php echo $row['news_image'] ?>" dprocessedid="l7js95">
+                </div>
+                <div class="col-12" style="margin-top: 30px;">
+                    <label for="content" class="form-label">Content 1</label>
                     <textarea class="form-control" id="content" name="content" placeholder="" value="<?php echo $row['content'] ?>" dprocessedid="l7js95"></textarea>
                 </div>
                 <div class="col-12" style="margin-top: 30px;">
-                    <label for="news_image" class="form-label">News Image</label>
-                    <input type="file" class="form-control" id="news_image" name="news_image" placeholder="" value="<?php echo $row['news_image'] ?>" dprocessedid="l7js95">
+                    <label for="content" class="form-label">Content 2</label>
+                    <textarea class="form-control" id="content2" name="content2" placeholder="" value="<?php echo $row['content2'] ?>" dprocessedid="l7js95"></textarea>
+                </div>
+                <div class="col-12" style="margin-top: 30px;">
+                    <label for="content" class="form-label">Content 3</label>
+                    <textarea class="form-control" id="content3" name="content3" placeholder="" value="<?php echo $row['content3'] ?>" dprocessedid="l7js95"></textarea>
                 </div>
                 <div class="col-12" style="margin-top: 30px;">
                     <p class="form-label">News Category</p>
@@ -112,7 +116,24 @@
                         Comeback
                       </label>
                     </div>
-                </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="category" id="category" value="<?php echo $row['category'] ?>" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        K-Drama
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="category" id="category" value="<?php echo $row['category'] ?>" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Hot Scandals
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="category" id="category" value="<?php echo $row['category'] ?>" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        K-Group
+                      </label>
+                    </div>
                 <input class="btn btn-success" style="float: right; margin: 50px 0;" name="edit" type="submit" value="Save">
             </div>
         </form>
