@@ -1,0 +1,211 @@
+.tambahanalbum{
+    border: 2px solid #7C924E;
+    height: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tambahanalbum form input{
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+    box-sizing: border-box;
+}
+
+.tambahanalbum form input text{
+    width: 600px;
+    size: 40;
+}
+
+.editalbum{
+    border: 2px solid #7C924E;
+    height: 850px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.editalbum form input{
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+    box-sizing: border-box;
+}
+
+.editalbum form input text{
+    width: 600px;
+    size: 40;
+}
+
+.edittopnews{
+    border: 2px solid #7C924E;
+    height: 550px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.edittopnews form input{
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+    box-sizing: border-box;
+}
+
+.edittopnews form input text{
+    width: 600px;
+    size: 40;
+}
+
+.editpurchase{
+    border: 2px solid #7C924E;
+    height: 120px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.editpurchase form input{
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+    box-sizing: border-box;
+}
+
+.editpurchase form input text{
+    width: 600px;
+    size: 40;
+}
+
+.editaboutus{
+    border: 2px solid #7C924E;
+    height: 680px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.editaboutus form input{
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+    box-sizing: border-box;
+}
+
+.editaboutus form input text{
+    width: 600px;
+    size: 40;
+}
+
+
+.tambahanphotocard{
+    border: 2px solid #7C924E;
+    height: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tambahanphotocard form input{
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+    box-sizing: border-box;
+}
+
+.tambahanphotocard form input text{
+    width: 600px;
+    size: 40;
+}
+
+.editphotocard{
+    border: 2px solid #7C924E;
+    height: 850px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.editphotocard form input{
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+    box-sizing: border-box;
+}
+
+.editphotocard form input text{
+    width: 600px;
+    size: 40;
+}
+
+
+.tambahanlightstick{
+    border: 2px solid #7C924E;
+    height: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tambahanlightstick form input{
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+    box-sizing: border-box;
+}
+
+.tambahanlightstick form input text{
+    width: 600px;
+    size: 40;
+}
+
+.editlightstick{
+    border: 2px solid #7C924E;
+    height: 850px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.editlightstick form input{
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+    box-sizing: border-box;
+}
+
+.editlightstick form input text{
+    width: 600px;
+    size: 40;
+}
+
+
+.tambahanticket{
+    border: 2px solid #7C924E;
+    height: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tambahanticket form input{
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+    box-sizing: border-box;
+}
+
+.tambahanticket form input text{
+    width: 600px;
+    size: 40;
+}
+
+.editticket{
+    border: 2px solid #7C924E;
+    height: 850px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.editticket form input{
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+    box-sizing: border-box;
+}
+
+.editticket form input text{
+    width: 600px;
+    size: 40;
+}

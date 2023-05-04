@@ -91,19 +91,17 @@
 
   <!-- banner -->
   <?php
-    $homebanner = "SELECT * FROM home_banner ORDER BY id_banner DESC'";
-    $result = mysqli_query($conn, $homebanner);
-    $row = mysqli_fetch_assoc($result);
+    $homebanner = mysqli_query($conn, "SELECT * FROM home_banner ORDER BY id_banner DESC");
+    $banner = mysqli_fetch_assoc($homebanner);
   ?>
-  <div class="banner" style="margin-top: 60px; background-image: url('data:image/png;base64,<?php echo base64_encode($row['imgnews_banner']) ?>');">
+  <div class="banner" style="margin-top: 60px; background-image: url('data:image/png;base64,<?php echo base64_encode($banner['imgnews_banner']) ?>');">
       <div class="content" style="text-align: center;">
-        <h1 style="margin-top: 50px;"><?php echo $row['title_banner'] ?></h1>
-        <p><?php echo $row['desc_banner'] ?></p>
+        <h1 style="margin-top: 50px;"><?php echo $banner['title_banner'] ?></h1>
+        <p><?php echo $banner['desc_banner'] ?></p>
         <a class="btn btn-success" href="all_news.php" role="button">Discover Now</a>
       </div>
       <div style="margin-top: 50px;">
-        <a onclick="location.href='edit_home_banner.php?id_banner=<?php echo $row['id_banner'] ?>'"class="btn btn-success" style="margin: 10px 30px 20px 20px; float: right;">edit</a>
-        <a onclick="location.href='add_home_banner.php'" class="btn btn-primary" style="margin: 10px 0px 20px 30px; float: right;">add</a>
+        <a onclick="location.href='add_home_banner.php'" class="btn btn-primary" style="margin: 10px 30px 20px 0px; float: right;">edit</a>
       </div>
   </div>
   <!-- banner -->
@@ -175,51 +173,6 @@
         </div>
       </div>
     </section>
-          <!-- <div class="col-11 fontart" style="margin: 55px 0 0 50px;">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-              <div class="col-auto d-none d-lg-block">
-                  <img src="img/bp-home.png" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                  </div>
-              <div class="col p-5 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-success" style="font-size: 20px;">#1</strong>
-                  <h3 class="mb-0">Blackpink Concert in Indonesia</h3>
-                  <div class="mb-1 text-muted">MAR 01 2023</div>
-                  <p class="card-text mb-auto">Blackpink's concert will be held in Gelora Bung Karno, Jakarta.</p>
-                  <a href="artikel_bp.php" class="stretched-link">Continue reading</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-11 fontart" style="margin: 10px 0 0 50px;">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-              <div class="col-auto d-none d-lg-block">
-                  <img src="img/jimin-home.png" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                  </div>
-              <div class="col p-5 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-success" style="font-size: 20px;">#2</strong>
-                  <h3 class="mb-0">Jimin released new solo album</h3>
-                  <div class="mb-1 text-muted">Mar 24 2023</div>
-                  <p class="card-text mb-auto">Fans were shocked with the news about Jimin solo debut.</p>
-                  <a href="#" class="stretched-link">Continue reading</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-11 fontart" style="margin: 10px 0 0 50px;">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-              <div class="col-auto d-none d-lg-block">
-                  <img src="img/kai-home.png" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                  </div>
-              <div class="col p-5 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-success" style="font-size: 20px;">#3</strong>
-                  <h3 class="mb-0">Kai's Rover is banned during CSAT</h3>
-                  <div class="mb-1 text-muted">Mar 20 2023</div>
-                  <p class="card-text mb-auto">Kai's Rover has been stuck in many netizens' minds rent-free thanks to its fun melody and addictive chorus.</p>
-                  <a href="#" class="stretched-link">Continue reading</a>
-              </div>
-            </div>
-          </div> -->
-          <!-- <a href="" style="margin-left: 50px;">see more...</a> -->
-        <!-- </div>
-      </section> -->
 
       <div class="container px-4 py-5" id="custom-cards">
         <h2 class="pb-2 border-bottom" style="font-weight: bold;">Kpop Merchandise</h2>
@@ -381,7 +334,7 @@
             <h6 class="text-uppercase mb-4 font-weight-bold">
               O-KI
             </h6>
-            <p>
+            <p style="text-align: justify;">
               O-Ki is a company that gives a updated and trusted information about the K-POPworld. We also 
               provide you with ashop that sells licensed and offcial merchendise from various group.
             </p>
@@ -394,16 +347,12 @@
           <div class="col-md-1 col-lg-2 col-xl-2 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Pages</h6>
             <p>
-              <a class="text-black">Scandal</a>
+              <a class="text-black" href="all_news.php">News</a>
+            <p>
+              <a class="text-black" href="merchandise.php">Merchandise</a>
             </p>
             <p>
-              <a class="text-black">Debut</a>
-            </p>
-            <p>
-              <a class="text-black">Comeback</a>
-            </p>
-            <p>
-              <a class="text-black">Shop</a>
+              <a class="text-black" href="ticket.php">Ticket Concert</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -435,7 +384,7 @@
           <!-- Grid column -->
           <div class="col-md-8 col-lg-3 col-xl-3 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-            <p><i class="fas fa-home mr-3"></i> Lippo Plaza Medan, Lantai 5 - 7, Jl. Imam Bonjol No.6, Petisah Tengah, Medan Petisah, Medan City, North Sumatra 20112</p>
+            <p style="text-align: justify;"><i class="fas fa-home mr-3"></i> Lippo Plaza Medan, Lantai 5 - 7, Jl. Imam Bonjol No.6, Petisah Tengah, Medan Petisah, Medan City, North Sumatra 20112</p>
             <p><i class="fas fa-envelope mr-3"></i><a href="mailto:oki.kpopnews@gmail.com" style="text-decoration: none; color: black">oki.kpopnews@gmail.com</a></p>
             <p><i class="fas fa-phone mr-3"></i> +62 8123456789</p>
           </div>
@@ -455,11 +404,6 @@
               <a class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="30" height="30"><use xlink:href="#twitter"/></svg></a>
               <a class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="30" height="30"><use xlink:href="#instagram"/></svg></a>
               <a class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="30" height="30"><use xlink:href="#facebook"/></svg></a>
-              <!-- <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-facebook-f"></i> </a>
-              <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-twitter"></i></a>
-              <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-google"></i></a>
-              <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-instagram"></i></a> -->
-            <!-- Grid column -->
           </div>
           <p style="text-align: right; margin-bottom: 50px;">&copy; <script>document.write(new Date().getFullYear())</script> Copyright</p>
         </div>
@@ -468,9 +412,7 @@
     </div>
     <!-- Grid container -->
   </footer>
-  
   <!-- Footer -->
-    <!-- End Footer -->
   </body>
   <script src="bootstrap/bootstrap-5.2.3-examples/assets/dist/js/bootstrap.bundle.min.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->

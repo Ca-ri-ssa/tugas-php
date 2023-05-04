@@ -1,0 +1,179 @@
+.tambahanalbum{
+    height: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tambahanalbum form input{
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.tambahanalbum form input text{
+    width: 600px;
+    size: 40;
+}
+
+.editalbum{
+    /* border: 2px solid #7C924E; */
+    height: 850px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.editalbum form input{
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.editalbum form input text{
+    width: 600px;
+    size: 40;
+}
+
+.edittopnews{
+    height: 550px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.edittopnews form input{
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.edittopnews form input text{
+    width: 600px;
+    size: 40;
+}
+
+.editpurchase{
+    height: 120px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.editpurchase form input{
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.editpurchase form input text{
+    width: 600px;
+    size: 40;
+}
+
+.editaboutus{
+    height: 680px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.editaboutus form input{
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.editaboutus form input text{
+    width: 600px;
+    size: 40;
+}
+
+
+.tambahanphotocard{
+    height: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tambahanphotocard form input{
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.tambahanphotocard form input text{
+    width: 600px;
+    size: 40;
+}
+
+.editphotocard{
+    height: 850px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.editphotocard form input{
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.editphotocard form input text{
+    width: 600px;
+    size: 40;
+}
+
+
+.tambahanlightstick{
+    height: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tambahanlightstick form input{
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.tambahanlightstick form input text{
+    width: 600px;
+    size: 40;
+}
+
+.editlightstick{
+    height: 850px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.editlightstick form input{
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.editlightstick form input text{
+    width: 600px;
+    size: 40;
+}
+
+
+.tambahanticket{
+    height: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tambahanticket form input{
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.tambahanticket form input text{
+    width: 600px;
+    size: 40;
+}
+
+.editticket{
+    height: 850px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.editticket form input{
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.editticket form input text{
+    width: 600px;
+    size: 40;
+}

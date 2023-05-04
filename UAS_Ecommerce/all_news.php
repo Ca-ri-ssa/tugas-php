@@ -106,14 +106,19 @@
     <form class="d-flex" role="search" style="margin: 80px 0 30px;">
         <input class="form-control me-2" type="search" placeholder="Search news" aria-label="Search">
         <button class="btn btn-success" type="submit">Search</button>
-        </form>
-        <div class="p-4 p-md-5 mb-4 rounded text-bg" style="background-image: url(img/kdrama-headline.png)">
+    </form>
+        <?php
+        $allnewsbanner = mysqli_query($conn, "SELECT * FROM allnews_banner ORDER BY id_allnewsbanner DESC");
+        $allbanner = mysqli_fetch_assoc($allnewsbanner);
+        ?>
+        <div class="p-4 p-md-5 mb-4 rounded text-bg" style="background-image: url('data:image/png;base64,<?php echo base64_encode($allbanner['img_allnewsbanner']) ?>')">
             <div class="col-md-7 px-0">
-                <h1 class="display-2 fst-italic fw-normal" style="color: white;">'Hotel Del Luna' is the highest rate k-drama</h1>
-                <p class="lead my-3" style="color: white;">'Hotel De Luna' made a mark on tvN's broadcast history and drew lots of attention and popularity with the production of the drama</p>
-                <p class="lead mb-0"><a href="#" style="color: #F3B6FF;">Continue reading...</a></p>
+                <a class="display-2 fst-italic fw-normal" style="color: white; text-decoration: none;" href="read_allnews_banner.php?id_allnewsbanner=<?php echo $allbanner['id_allnewsbanner'] ?>"><?php echo $allbanner['title_allnewsbanner'] ?></a>
+                <p class="lead my-3" style="color: white;"><?php echo $allbanner['desc_allnewsbanner'] ?></p>
             </div>
-        </div>
+            <div>
+            <a onclick="location.href='add_allnews_banner.php'" class="btn btn-primary" style="margin: 0px 0px 30px 30px; float: right;">Add</a>
+            </div>
         </div>
 
         <div class="container" style="margin-bottom: 100px;">
@@ -143,135 +148,99 @@
                 </div>
             </div>
             <?php } ?>
-
-            <!-- <div class="col-12 fontart" style="margin-top: 15px;">
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col-auto d-none d-lg-block">
-                        <img src="img/bp-home.png" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                    </div>
-                    <div class="col p-5 d-flex flex-column position-static">
-                        <h3 class="mb-0">Blackpink Concert in Indonesia</h3>
-                        <div class="mb-1 text-muted">MAR 01</div>
-                        <p class="card-text mb-auto">Blackpink's concert will be held in Gelora Bung Karno, Jakarta.</p>
-                        <a href="artikel_bp.php" class="stretched-link">Continue reading...</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 fontart" style="margin: 15px 0 0;">
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col-auto d-none d-lg-block">
-                    <img src="img/siwon-news.png" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                    </div>
-                <div class="col p-5 d-flex flex-column position-static">
-                    <h3 class="mb-0">Super Junior's Choi Siwon participate for Earth Hour campaign</h3>
-                    <div class="mb-1 text-muted">MAR 25</div>
-                    <p class="card-text mb-auto">Super Junior's Siwon, as a representative of his agency, SM Entertainment, participated in the world's largest conservation campaign, "Earth Hour" held on March 25</p>
-                    <a href="" class="stretched-link">Continue reading...</a>
-                </div>
-            </div>
-
-            <div class="col-12 fontart" style="margin-top: 15px;">
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col-auto d-none d-lg-block">
-                    <img src="img/newjeans-news.png" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                    </div>
-                <div class="col p-5 d-flex flex-column position-static">
-                    <h3 class="mb-0">New Jeans opened registration for Bunnies Club</h3>
-                    <div class="mb-1 text-muted">MAR 27</div>
-                    <p class="card-text mb-auto">New Jeans makes very shocking announcement about new fan club.</p>
-                    <a href="" class="stretched-link">Continue reading...</a>
-                </div>
-            </div> -->
-
-            <div style="margin: 100px 0 50px 0;">
-                <h2 class="pb-2 border-bottom" style="font-weight: bold;">Top most searched</h2>
-                <table class="table table-hover" style="text-align: center; outline: 2px solid black; margin-top: 55px;">
-                    <tr style="border-bottom: 2px solid black;">
-                        <th>#</th>
-                        <th>Group</th>
-                        <th>Volume</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>BTS</td>
-                        <td>10,000,513,000</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>EXO</td>
-                        <td>9,400,522,000</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>BLACKPINK</td>
-                        <td>9,350,755,000</td>
-                    </tr>
-                </table>
-                <a href="">see more...</a>
-            </div>
-
-            <h2 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 55px;">Comeback News</h2>
-            <div class="row mb-2">
-                <div class="col-md-6">
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col-auto d-none d-lg-block">
-                        <img src="img/Frame 3.png" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Paceholder</title>
-                        </div>
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-success">New</strong>
-                        <h3 class="mb-0">Nct Dream Comeback</h3>
-                        <div class="mb-1 text-muted">Dec 20</div>
-                        <p class="card-text mb-auto">Nct Dream remake Candy from H.O.T! It will be released at 16th December 2022.</p>
-                        <a href="#" class="stretched-link">Continue reading...</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col-auto d-none d-lg-block">
-                        <img src="img/Frame 2.png" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                    </div>
-                    <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-danger">HOT</strong>
-                    <h3 class="mb-0">Blackpink Comeback</h3>
-                    <div class="mb-1 text-muted">Aug 20</div>
-                    <p class="card-text mb-auto">Blackpink will release new album "Born Pink" at 16th September 2022.</p>
-                    <a href="#" class="stretched-link">Continue reading...</a>
-                    </div>
-                </div>
-            </div>
-
-            <h2 class="pb-2 border-bottom" style="font-weight: bold; margin-top: 100px; margin-bottom: 55px;">K-Drama</h2>
-            <div class="row mb-2">
-                <div class="col-md-6">
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col-auto d-none d-lg-block">
-                            <img src="img/Frame 5.png" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                        </div>
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-success">New</strong>
-                            <h3 class="mb-0">Cha Eunwoo as an Exorcist in Island</h3>
-                            <div class="mb-1 text-muted">Dec 12</div>
-                                <p class="card-text mb-auto">Island will be aired on TvN at 10th February 2023.</p>
-                                <a href="#" class="stretched-link">Continue reading...</a>
-                            </div>
-                        </div>
-                    </div>
-                <div class="col-md-6">
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col-auto d-none d-lg-block">
-                            <img src="img/Frame 4.png" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                        </div>
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-danger">HOT</strong>
-                            <h3 class="mb-0">Song Joong Ki in Reborn Rich</h3>
-                            <div class="mb-1 text-muted">Oct 10</div>
-                            <p class="card-text mb-auto">Reborn Rich is an adapted web novel. It will be aired at 18th November 2022.</p>
-                            <a href="#" class="stretched-link">Continue reading...</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
     </div>
+    
+    <footer class="text-center text-lg-start text-black" style="border-top: 2px solid #7C924E; background-color: #ffffff;">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0" style="max-width: 2000px">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              O-KI
+            </h6>
+            <p style="text-align: justify;">
+              O-Ki is a company that gives a updated and trusted information about the K-POPworld. We also 
+              provide you with ashop that sells licensed and offcial merchendise from various group.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-1 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Pages</h6>
+            <p>
+              <a class="text-black" href="all_news.php">News</a>
+            <p>
+              <a class="text-black" href="merchandise.php">Merchandise</a>
+            </p>
+            <p>
+              <a class="text-black" href="ticket.php">Ticket Concert</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-1 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Shop
+            </h6>
+            <p>
+              <a class="text-black">Photocard</a>
+            </p>
+            <p>
+              <a class="text-black">Lightstick</a>
+            </p>
+            <p>
+              <a class="text-black">Album</a>
+            </p>
+            <p>
+              <a class="text-black">Concert Ticket</a>
+            </p>
+          </div>
+
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-8 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p style="text-align: justify;"><i class="fas fa-home mr-3"></i> Lippo Plaza Medan, Lantai 5 - 7, Jl. Imam Bonjol No.6, Petisah Tengah, Medan Petisah, Medan City, North Sumatra 20112</p>
+            <p><i class="fas fa-envelope mr-3"></i><a href="mailto:oki.kpopnews@gmail.com" style="text-decoration: none; color: black">oki.kpopnews@gmail.com</a></p>
+            <p><i class="fas fa-phone mr-3"></i> +62 8123456789</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-3">
+
+      <!-- Section: Copyright -->
+      <section class="p-4 pt-0 row">
+        <div class="d-flex justify-content-between">
+          <a href="#"><img src="img/LOGO.png" style="width: 100px;"></a>
+          <div class="text-center">
+              <a class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="30" height="30"><use xlink:href="#twitter"/></svg></a>
+              <a class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="30" height="30"><use xlink:href="#instagram"/></svg></a>
+              <a class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="30" height="30"><use xlink:href="#facebook"/></svg></a>
+          </div>
+          <p style="text-align: right; margin-bottom: 50px;">&copy; <script>document.write(new Date().getFullYear())</script> Copyright</p>
+        </div>
+      </section>
+      <!-- Section: Copyright -->
+    </div>
+    <!-- Grid container -->
+  </footer>
+  <!-- Footer -->
 </body>
 </html>
