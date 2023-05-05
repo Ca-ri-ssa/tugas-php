@@ -101,7 +101,7 @@
                 </div>
                 <div class="col-12" style="margin-top: 30px;">
                     <label for="imgnews" class="form-label" style="display: block;">News Image</label>
-                    <img src="data:imgnews/png;base64,<?php echo base64_encode($oldimage) ?>" width="400px" height="410px" border= "2px solid black" display="block"><br/>
+                    <img src="data:imgnews/png;base64,<?php echo base64_encode($oldimage) ?>" width="200" height="280" border= "2px solid black" display="block"><br/>
                     <input type="file" class="form-control" id="imgnews" name="newimgnews" placeholder="" value="" dprocessedid="l7js95" style="margin-top: 10px;">
                 </div>
                 <div class="col-12" style="margin-top: 30px;">
