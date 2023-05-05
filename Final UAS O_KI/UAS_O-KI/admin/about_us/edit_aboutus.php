@@ -103,8 +103,8 @@
                         </div>
 
                         <div class="col-12" style="margin-top: 30px;">
-                            <label for="address" class="form-label">Location</label>
-                            <input type="text" class="form-control" id="address" name="address" placeholder="" value="<?php echo $data["location"] ?>" dprocessedid="l7js95">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="location" name="location" placeholder="" value="<?php echo $data["location"] ?>" dprocessedid="l7js95">
                         </div>
 
                         <div class="col-12" style="margin-top: 30px;">
