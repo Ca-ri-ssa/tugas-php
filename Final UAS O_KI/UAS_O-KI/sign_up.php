@@ -61,7 +61,7 @@
               <label for="password">Password Confirmation</label>
             </div>
             
-            <p>Do you have an account? <a href="index.php">Login</a></p>
+            <p>Do you have an account? <a href="log_in.php">Login</a></p>
             <button class="w-50 btn btn-success" name="submit" type="submit" onclick="user/home/homepage.php" style="margin-bottom: 80px;">Sign Up</button>
           </form>
         </main>
