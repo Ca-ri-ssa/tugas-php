@@ -138,7 +138,7 @@
                 <div class="col-12 fontart" style="margin-top: 15px;">
                     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col-auto d-none d-lg-block">
-                            <img src="data:image/png;base64,<?php echo base64_encode($row['imgnews']) ?>" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
+                            <img src="data:image/png;base64,<?php echo base64_encode($row['imgnews']) ?>" class="bd-placeholder-img" width="200" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
                         </div>
                         <div class="col p-5 d-flex flex-column position-static">
                             <strong class="d-inline-block mb-2 text-success"><?php echo $row['category'] ?></strong>

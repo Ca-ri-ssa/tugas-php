@@ -74,14 +74,14 @@
         <h1>Your Purchase History</h1>
         <hr>
         <br>
-        <div class="col-11 fontart" style="margin: 10px 0 0 0px;">
+        <div class="col-11 fontart" style="margin: 10px 0 0 50px;">
             <?php
                 $purchase = mysqli_query($conn, "SELECT * FROM purchaselist ORDER BY tanggal_purchase DESC");
                 while($datapurchase = mysqli_fetch_array($purchase)){
             ?>
                         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col-auto d-none d-lg-block">
-                            <img src="data:image/png;base64,<?php echo $datapurchase['image'] ?>" class="bd-placeholder-img" width="400" height="310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
+                            <img src="data:image/png;base64,<?php echo $datapurchase['image'] ?>" class="bd-placeholder-img" width="500" height="330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
                         </div>
                         <div class="col p-5 d-flex flex-column position-static">
                             <h3 class="mb-0" style="font-weight: bolder;"><?php echo $datapurchase['nama_barang'] ?></h3>
