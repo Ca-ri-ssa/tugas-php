@@ -36,7 +36,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ms-auto my-2 my-lg-0" style="font-size: 16px; margin-left: 6px; color: black;">
             <li class="nav-item">
-              <a class="nav-link active"  aria-current="page" href="homepage.php"><span style="color: black;">Home</span></a>
+              <a class="nav-link active"  aria-current="page" href="../home/homepage.php"><span style="color: black;">Home</span></a>
             </li>
                     
             <li class="nav-item dropdown">
