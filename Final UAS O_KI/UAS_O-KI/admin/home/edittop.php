@@ -99,7 +99,7 @@
                 
                   <div class="col-12" style="margin-top: 30px;">
                       <label for="Newimage" class="form-label" style="display: block;">Top News Picture</label>
-                      <img src="data:image/png;base64,<?php echo base64_encode($oldimage)?>" width="400px" height="230px" border= "2px solid black" display="block"><br/>
+                      <img src="data:image/png;base64,<?php echo base64_encode($oldimage)?>" width="230" height="285" border= "2px solid black" display="block"><br/>
                       <input type="file" class="form-control" id="Newimage" name="Newimage" placeholder="" value="" dprocessedid="l7js95" style="margin-top: 10px;">
                   </div>
 
