@@ -36,7 +36,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ms-auto my-2 my-lg-0" style="font-size: 16px; margin-left: 6px; color: black;">
             <li class="nav-item">
-              <a class="nav-link active"  aria-current="page" href="homepage.php"><span style="color: black;">Home</span></a>
+              <a class="nav-link active"  aria-current="page" href="homepage.php"><span style="color: green;">Home</span></a>
             </li>
                     
             <li class="nav-item dropdown">
@@ -58,7 +58,7 @@
             </li>
                     
             <li class="nav-item">
-              <a class="nav-link" href="../profile/profile.php" style="color: #198754;">Profile</a>
+              <a class="nav-link" href="../profile/profile.php" style="color: black;">Profile</a>
             </li>
                     
             <li><hr class="dropdown-divider"></li>
@@ -82,7 +82,7 @@
 
     <div class="container" style="margin-top: 75px; margin-bottom: 50px;">
         <div class="main-body">
-            <h1 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 20px;">Edit Top News</h1>
+            <h2 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 20px;">Edit Top News</h2>
             <div class="edittopnews">
               <?php
                 $id = $datatop2->id_top;

@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="profile_edit.css" />
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars/">
   <link href="../../bootstrap/bootstrap-5.2.3-examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-  <title>Profile</title>
+  <title>Edit Profile</title>
   <link rel="icon" type="image/png" href="../../img/logo-bg.png">
 </head>
 <body>
@@ -79,7 +79,7 @@
 
   <div class="container" style="margin-top: 75px; margin-bottom: 50px;">
       <div class="main-body">
-        <h1 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 55px;">Profile</h1>
+        <h2 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 55px;">Edit Profile</h2>
             <div class="row" style="padding: 0 100px;">
               <div class="col" style="margin-left: 30px;">
                 <div class="card-body">
