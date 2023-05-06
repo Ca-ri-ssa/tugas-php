@@ -213,7 +213,7 @@
                     <h4 class="card-text" style="text-align: center; margin: 20px 0 30px 0;"><?php echo $ambil['Title'] ?></h4>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="../ticket/concert.php?idh=<?php echo $ambil['id_album']?>">View</a></button>
+                          <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="../ticket/concert.php?idh=<?php echo $ambil['id_ticket']?>">View</a></button>
                         </div>
                         <large class="text-muted">Rp <?php echo $ambil['harga'] ?></large>
                     </div>
