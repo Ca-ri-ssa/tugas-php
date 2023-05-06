@@ -34,7 +34,7 @@
             </li>
                     
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="vertical-align: middle; color: #198754;">All</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="vertical-align: middle; color: green;">All</a>
 
                 <ul class="dropdown-menu dropdwown-menu-light" aria-labelledby="navbarDropdownNews">
                     <li><a class="dropdown-item" href="../news/all_news.php" style="color: black;">News</a></li>
@@ -145,18 +145,6 @@
                                         <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green;" href="editconcert.php?id=<?php echo $ambil['id_ticket']?>">Edit</a></button>
                                     </div>
                                     <large class="text-muted">Rp <?php echo $ambil['harga'] ?></large>
-                                    <!-- <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" onclick="del_ticketconcert()">Delete</a></button>
-                                        <script>
-                                        function del_ticketconcert() {
-                                                if (confirm("Are you sure to delete this ticket concert?")) {
-                                                window.location.href='../hapus/hapusalbum.php?idt=<?php echo $ambil['id_ticket']?>';
-                                                } else {
-                                                window.location.href='';
-                                                }
-                                            }
-                                        </script>
-                                    </div> -->
                                 </div>
                             </div>
                         </div>

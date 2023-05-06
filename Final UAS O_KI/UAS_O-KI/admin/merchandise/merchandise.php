@@ -146,18 +146,6 @@
                                         <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="../album/editalbum.php?id=<?php echo $ambil['id_album']?>">Edit</a></button>
                                     </div>
                                     <large class="text-muted">Rp <?php echo $ambil['harga'] ?></large>
-                                    <!-- <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" onclick="del_merchalbum()">Delete</a></button>
-                                        <script>
-                                        function del_merchalbum() {
-                                                if (confirm("Are you sure to delete this album?")) {
-                                                window.location.href='../hapus/hapusalbum.php?idm=<?php echo $ambil['id_album']?>';
-                                                } else {
-                                                window.location.href='';
-                                                }
-                                            }
-                                        </script>
-                                    </div> -->
                                 </div>
                             </div>
                         </div>

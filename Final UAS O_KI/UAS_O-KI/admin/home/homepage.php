@@ -195,9 +195,7 @@
                             <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="../album/album.php?idh=<?php echo $ambil['id_album']?>">View</button>
                             <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="../album/editalbum.php?id=<?php echo $ambil['id_album']?>">Edit</a></button>
                         </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="../hapus/hapusalbum.php?idm=<?php echo $ambil['id_album']?>">Delete</a></button>
-                        </div>
+                        <large class="text-muted">Rp <?php echo $ambil['harga'] ?></large>
                     </div>
                   </div>
               </div>
@@ -224,9 +222,7 @@
                             <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="../ticket/concert.php?idh=<?php echo $ambil['id_ticket']?>">View</button>
                             <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="../ticket/editconcert.php?id=<?php echo $ambil['id_ticket']?>">Edit</a></button>
                         </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-success"><a style="text-decoration:none; color:green" href="../hapus/hapusalbum.php?idt=<?php echo $ambil['id_ticket']?>">Delete</a></button>
-                        </div>
+                        <large class="text-muted">Rp <?php echo $ambil['harga'] ?></large>
                     </div>
                   </div>
               </div>

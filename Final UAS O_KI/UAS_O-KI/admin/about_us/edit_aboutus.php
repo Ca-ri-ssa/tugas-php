@@ -79,7 +79,7 @@
 
     <div class="container" style="margin-top: 75px; margin-bottom: 50px;">
         <div class="main-body">
-            <h1 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 20px;">Edit About Us</h1>
+            <h2 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 20px;">Edit About Us</h2>
             <div class="editaboutus">
                 <?php       
                     $aboutus = mysqli_query($conn, "SELECT * FROM aboutus");
@@ -112,15 +112,8 @@
                             <input type="text" class="form-control" id="notes" name="notes" placeholder="" value="<?php echo $data["Notes"] ?>" dprocessedid="l7js95">
                         </div>
 
-                        <input class="btn btn-success" style="float: right; margin: 50px 0;" name="submit" type="submit" value="Save">
+                        <input class="btn btn-success" style="float: right; margin: 50px 0; padding: 6px 12px;" name="submit" type="submit" value="Save">
                     </div>
-
-                    <!-- deskripsi Perusahaan: <br/> <textarea id="deskripsi" name="deskripsi" placeholder="Deskripsi perusahaan"> <?php echo $data["deskripsi"] ?></textarea><br/>
-                    email: <input type="email" name="email" placeholder="email"  value="<?php echo $data["email"] ?>" width= "600px" size="50" ><br/>
-                    phone: <input type="phone" name="phone" placeholder="no telp"  value="<?php echo $data["phone"] ?>" width= "600px" size="50" ><br/>
-                    location:  <input type="address" name="location" placeholder="Lokasi"  value="<?php echo $data["location"] ?>" width= "600px" size="50" ><br/>
-                    notes:  <input type="text" name="notes" placeholder="notes"  value="<?php echo $data["Notes"] ?>" width= "600px" size="50" ><br/>
-                    <input type="submit" name="submit" placeholder="simpan" class="btn btn-lg btn-outline-success" value="submit hasil edit" border="2px solid #7C924E" background-color="#7C924E" size="20" margin="20px"> -->
                 </form>
                 <?php
                     if(isset($_POST['submit'])){

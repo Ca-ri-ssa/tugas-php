@@ -48,7 +48,7 @@
             </li>
                     
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="vertical-align: middle; color: black;">All</a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="vertical-align: middle; color: green;">All</a>
 
               <ul class="dropdown-menu dropdwown-menu-light" aria-labelledby="navbarDropdownNews">
                     <li><a class="dropdown-item" href="../news/all_news.php" style="color: black;">News</a></li>
