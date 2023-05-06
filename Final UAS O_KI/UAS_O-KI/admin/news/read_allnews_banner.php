@@ -151,7 +151,7 @@
       <h2 style="text-align: center; margin-bottom: 20px;"><?php echo $hasil['title_allnewsbanner'] ?></h2>
         <p style="display: inline; margin-right: 20px;">Tag:</p>
         <button type="button" class="btn btn-outline-success" disabled style="display: inline;"><?php echo $hasil['category_allnewsbanner'] ?></button>
-        <button onclick="location.href='edit_allnews_banner.php?id_allnewsbanner=<?php echo $hasil['id_allnewsbanner'] ?>'" class="btn btn-primary" name="edit_allnewsbanner" style="display: inline; margin: 0 20px 0 420px;">Edit</button>
+        <button onclick="location.href='edit_allnews_banner.php?id_allnewsbanner=<?php echo $hasil['id_allnewsbanner'] ?>'" class="btn btn-primary" name="edit_allnewsbanner" style="display: inline; margin: 0 20px 0 400px;">Edit</button>
         <button onclick="del()" class="btn btn-danger" name="delete" style="display: inline; margin: 0 20px 0 0;">Delete</button>
         <script>
           function del() {
