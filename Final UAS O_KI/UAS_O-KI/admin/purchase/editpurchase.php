@@ -81,7 +81,7 @@
 
     <div class="container" style="margin-top: 75px; margin-bottom: 50px;">
         <div class="main-body">
-            <h1 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 20px;">Edit Status Pembelian</h1>
+            <h2 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 20px;">Edit Status Pembelian</h2>
             <div class="editpurchase">
               <form action="" method="POST" enctype="multipart/form-data">
                 <div class="col-12">
@@ -94,7 +94,7 @@
                         <option value="Barang Sudah Diterima" <?php if ($data2->status_barang == 'Barang Sudah Diterima') echo 'selected' ?>>Barang Sudah Diterima</option>
                     </select>
                     <br/>
-                    <input class="btn btn-success" style="float: right; margin: 50px 0;" name="submit" type="submit" value="Save">
+                    <input class="btn btn-success" style="float: right; margin: 50px 0; padding: 6px 12px;" name="submit" type="submit" value="Save">
                 </div>
               </form>
               <?php

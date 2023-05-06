@@ -78,7 +78,7 @@
 
     <div class="container" style="margin-top: 75px; margin-bottom: 50px;">
         <div class="main-body">
-            <h1 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 20px;">Tambah Ticket Concert</h1>
+            <h2 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 20px;">Tambah Ticket Concert</h2>
             <div class="tambahanticket">
                 <form action="" method="POST" enctype="multipart/form-data">
                   <div style="padding: 0 30px;">
@@ -102,14 +102,8 @@
                         <textarea class="form-control" id="deskripsi" name="deskripsi" placeholder="" dprocessedid="l7js95"></textarea>
                     </div>
 
-                    <input class="btn btn-success" style="float: right; margin: 50px 0;" name="submit" type="submit" value="Save">
-                ``</div>
-
-                    <!-- Nama:  <input type="text" name="Title" placeholder="Nama Ticket"  value="" width= "600px" size="50" required><br/>
-                    Gambar: <input type="file" name="image" placeholder="Gambar Ticket" value="Upload"  required><br/>
-                    Harga: <input type="text" name="harga" placeholder="Harga Ticket"  value="" width= "600px" size="50" required><br/>
-                    Keterangan: </br> <textarea name="deskripsi" placeholder="Deskripsi Ticket"  value="keterangan" required></textarea><br/>
-                    <input type="submit" name="submit" placeholder="simpan" class="btn btn-lg btn-outline-success" value="submit" border="2px solid #7C924E" background-color="#7C924E" size="20" margin="20px"> -->
+                    <input class="btn btn-success" style="float: right; margin: 50px 0; padding: 6px 12px;" name="submit" type="submit" value="Save">
+                  </div>
                 </form>
                 <?php
                     if(isset($_POST['submit'])){

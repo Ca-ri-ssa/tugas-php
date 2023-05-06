@@ -40,7 +40,7 @@
             </li>
                     
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="vertical-align: middle; color: black;">All</a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="vertical-align: middle; color: green;">All</a>
 
               <ul class="dropdown-menu dropdwown-menu-light" aria-labelledby="navbarDropdownNews">
                     <li><a class="dropdown-item" href="../news/all_news.php" style="color: black;">News</a></li>
@@ -58,7 +58,7 @@
             </li>
                     
             <li class="nav-item">
-              <a class="nav-link" href="../profile/profile.php" style="color: #198754;">Profile</a>
+              <a class="nav-link" href="../profile/profile.php" style="color: black;">Profile</a>
             </li>
                     
             <li><hr class="dropdown-divider"></li>
@@ -82,7 +82,7 @@
 
     <div class="container" style="margin-top: 75px; margin-bottom: 50px;">
         <div class="main-body">
-            <h1 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 20px;">Edit Ticket Concert</h1>
+            <h2 class="pb-2 border-bottom" style="font-weight: bold; margin-bottom: 20px;">Edit Ticket Concert</h2>
             <div class="editticket">
               <?php
                 $id = $data2->id_ticket;
@@ -113,16 +113,8 @@
                       <textarea class="form-control" id="deskripsi" name="deskripsi" placeholder="" dprocessedid="l7js95"> <?php echo $data2->deskripsi?></textarea>
                   </div>
 
-                  <input class="btn btn-success" style="float: right; margin: 50px 0;" name="submit" type="submit" value="Save">
-            ``  </div>
-                  
-
-                  <!-- Nama:  <input type="text" name="NewTitle" placeholder="Nama Ticket"  value="<?php echo $data2->Title ?>" width= "600px" size="50" ><br/>
-                  Gambar: <img src="data:image/png;base64,<?php echo base64_encode($oldimage) ?>" width="400px" height="230px" border="2px solid black"><br/>
-                  <input type="file" name="Newimage" placeholder="Gambar Ticket"><br/>
-                  Harga: <input type="text" name="harga" placeholder="Harga Ticket"  value="<?php echo $data2->harga ?>" width= "600px" size="50" ><br/>
-                  Keterangan: <br/> <textarea id="deskripsi" name="deskripsi" placeholder="Deskripsi Ticket"> <?php echo $data2->deskripsi?></textarea><br/>
-                  <input type="submit" name="submit" placeholder="simpan" class="btn btn-lg btn-outline-success" value="submit hasil edit" border="2px solid #7C924E" background-color="#7C924E" size="20" margin="20px"> -->
+                  <input class="btn btn-success" style="float: right; margin: 50px 0; padding: 6px 12px;" name="submit" type="submit" value="Save">
+                </div>
               </form>
               <?php
                 if(isset($_POST['submit'])){

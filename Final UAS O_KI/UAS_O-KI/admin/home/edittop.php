@@ -113,15 +113,8 @@
                       <input type="text" class="form-control" id="NewDeskripsi" name="NewDeskripsi" placeholder=""  value="<?php echo $datatop2->deskripsi?>" dprocessedid="l7js95">
                   </div>
 
-                  <input class="btn btn-success" style="float: right; margin: 50px 0;" name="submit" type="submit" value="Save">
+                  <input class="btn btn-success" style="float: right; margin: 50px 0; padding: 6px 12px;" name="submit" type="submit" value="Save">
                 </div>
-
-                    <!-- Nama:  <input type="text" name="NewTitle" placeholder="Nama Top News"  value="<?php echo $datatop2->title?>" width= "600px" size="50" ><br/>
-                    Gambar: <img src="data:image/png;base64,<?php echo base64_encode($oldimage)?>" width="400px" height="230px" border="2px solid black"><br/>
-                    <input type="file" name="Newimage" placeholder="Gambar Top News"><br/>
-                    Tanggal:  <input type="date" name="NewDate" placeholder="Tanggal"  value="<?php echo $datatop2->date?>" width= "600px" size="50" ><br/>
-                    Deskripsi:  <input type="text" name="NewDeskripsi" placeholder="Deskripsi"  value="<?php echo $datatop2->deskripsi?>" width= "600px" size="50" ><br/>
-                  <input type="submit" name="submit" placeholder="simpan" class="btn btn-lg btn-outline-success" value="submit hasil edit" border="2px solid #7C924E" background-color="#7C924E" size="20" margin="20px"> -->
               </form>
               <?php
                 if(isset($_POST['submit'])){
